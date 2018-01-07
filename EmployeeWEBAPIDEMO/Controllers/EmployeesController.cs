@@ -17,16 +17,18 @@ namespace EmployeeWEBAPIDEMO.Controllers
                 using (EmployeeDBEntities entities = new EmployeeDBEntities())
                 {
                     var EmployeeList = entities.Employees.ToList();
-
+                    
                     return Request.CreateResponse(HttpStatusCode.OK, EmployeeList);
                 }
             }
             catch(Exception ex)
             {
                 ErrorLogger(ex);
-               return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+               return Request.CreateErrorResponse(HttpStatusCode.NotFound,ex);
             }
         }
+
+
         public HttpResponseMessage Get(int id)
         {
             try
@@ -87,12 +89,14 @@ namespace EmployeeWEBAPIDEMO.Controllers
         //This method logs error to txt file
         private static void ErrorLogger(Exception ex)
         {
-            string path = @"C:\Users\SHARATHCHANDRA\documents\visual studio 2017
-                    \Projects\EmployeeWEBAPIDEMO\EmployeeWEBAPIDEMO\ErrorLogFile\ErrorLogger.txt";
+            string path = @"C:\Users\SHARATHCHANDRA\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeWEBAPIDEMO\ErrorLogFile\ErrorLogger.txt";
             using (StreamWriter writer = new StreamWriter(path, true))
             {
-                writer.WriteLine("Message: " + ex.Message + "<br/>"
-                                + "StackTrace: " + ex.StackTrace);
+                writer.WriteLine("Message: " + ex.Message + "\n"
+                                + "StackTrace: " + ex.StackTrace
+                                +"Date: "+DateTime.Now 
+                                + Environment.NewLine);
+
                 writer.WriteLine(Environment.NewLine + "------------------------------------");
             }
         }
