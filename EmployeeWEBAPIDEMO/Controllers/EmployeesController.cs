@@ -17,14 +17,14 @@ namespace EmployeeWEBAPIDEMO.Controllers
                 using (EmployeeDBEntities entities = new EmployeeDBEntities())
                 {
                     var EmployeeList = entities.Employees.ToList();
-                    
+
                     return Request.CreateResponse(HttpStatusCode.OK, EmployeeList);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ErrorLogger(ex);
-               return Request.CreateErrorResponse(HttpStatusCode.NotFound,ex);
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
             }
         }
 
@@ -43,7 +43,7 @@ namespace EmployeeWEBAPIDEMO.Controllers
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ErrorLogger(ex);
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
@@ -86,6 +86,34 @@ namespace EmployeeWEBAPIDEMO.Controllers
         }
 
 
+        public HttpResponseMessage Delete(int id)
+        {
+            try
+            {
+                using (EmployeeDBEntities entities = new EmployeeDBEntities())
+                {
+                    var empObj = entities.Employees.FirstOrDefault(e => e.ID == id);
+                    if (empObj != null)
+                    {
+                        entities.Employees.Remove(empObj);//The issue here is we need to save changes to the DB or it wont effect 
+                        entities.SaveChanges();
+                        return Request.CreateResponse(HttpStatusCode.OK, empObj);
+                    }
+                    else
+                        return Request.CreateResponse(HttpStatusCode.NotFound, "The Employee with ID = "+id + " is NOT found");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorLogger(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
+
+
+
+
         //This method logs error to txt file
         private static void ErrorLogger(Exception ex)
         {
@@ -94,7 +122,7 @@ namespace EmployeeWEBAPIDEMO.Controllers
             {
                 writer.WriteLine("Message: " + ex.Message + "\n"
                                 + "StackTrace: " + ex.StackTrace
-                                +"Date: "+DateTime.Now 
+                                + "Date: " + DateTime.Now
                                 + Environment.NewLine);
 
                 writer.WriteLine(Environment.NewLine + "------------------------------------");
