@@ -25,6 +25,7 @@ namespace EmployeeWEBAPIDEMO.Controllers
             {
                 ErrorLogger(ex);
                 return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+
             }
         }
 
@@ -39,7 +40,7 @@ namespace EmployeeWEBAPIDEMO.Controllers
                     if (empObj != null)
                         return Request.CreateResponse(HttpStatusCode.OK, empObj);
                     else
-                        return Request.CreateResponse(HttpStatusCode.NotFound, empObj);
+                        return Request.CreateResponse(HttpStatusCode.NotFound, "The Employee with ID = " + id + " is NOT found");
 
                 }
             }
@@ -110,6 +111,38 @@ namespace EmployeeWEBAPIDEMO.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
+
+
+        public HttpResponseMessage Put(int id, [FromBody]Employee employee)
+        {
+            try
+            {
+                using (EmployeeDBEntities entities = new EmployeeDBEntities())
+                {
+                    var empObj = entities.Employees.FirstOrDefault(e => e.ID == id);
+                    if (empObj != null)
+                    {
+                        empObj.FirstName = employee.FirstName;
+                        empObj.LastName = employee.LastName;
+                        empObj.Gender = employee.Gender;
+                        empObj.Salary = employee.Salary;
+
+                        entities.SaveChanges();
+
+                        return Request.CreateResponse(HttpStatusCode.OK, empObj);
+                    }
+                    else
+                        return Request.CreateResponse(HttpStatusCode.NotFound, "The Employee with ID = " + id + " is NOT found");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorLogger(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
+
 
 
 
