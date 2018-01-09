@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeWEBAPIDEMO", "Emplo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeDataAccess", "EmployeeDataAccess\EmployeeDataAccess.csproj", "{C53D3449-AF14-427E-851E-4C719AB30359}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApplicationUsingJSONP", "ClientApplication\ClientApplicationUsingJSONP.csproj", "{F1394025-BEE3-4001-8B25-34DC539E00A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApplicationUsingCORS", "ClientApplicaitonUsingCORS\ClientApplicationUsingCORS.csproj", "{2740E2DA-321A-4577-8235-F0E2F5A88876}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{C53D3449-AF14-427E-851E-4C719AB30359}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C53D3449-AF14-427E-851E-4C719AB30359}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C53D3449-AF14-427E-851E-4C719AB30359}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1394025-BEE3-4001-8B25-34DC539E00A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1394025-BEE3-4001-8B25-34DC539E00A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1394025-BEE3-4001-8B25-34DC539E00A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1394025-BEE3-4001-8B25-34DC539E00A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2740E2DA-321A-4577-8235-F0E2F5A88876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2740E2DA-321A-4577-8235-F0E2F5A88876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2740E2DA-321A-4577-8235-F0E2F5A88876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2740E2DA-321A-4577-8235-F0E2F5A88876}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

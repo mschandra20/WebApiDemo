@@ -1,4 +1,6 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Cors;
+using WebApiContrib.Formatting.Jsonp;
 
 namespace EmployeeWEBAPIDEMO
 {
@@ -24,6 +26,13 @@ namespace EmployeeWEBAPIDEMO
             //    new CamelCasePropertyNamesContractResolver();
 
             config.Formatters.Remove(config.Formatters.XmlFormatter);
+
+            var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
+            config.Formatters.Insert(0,jsonpFormatter);//At zero index we are inserting the above object
+
+            EnableCorsAttribute cors = new EnableCorsAttribute("*","*","*");
+            config.EnableCors(cors);
+
         }
     }
 }

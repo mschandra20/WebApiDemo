@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JSONP CLIENT</title>
+    <script src="Scripts/jquery-1.10.2.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {   //Here we are telling to do this anonymous function when the DOM is ready
+
+            var empList = $('#empList'); //Getting empList from the id used below
+
+            //Get all employees button
+            $('#btnGetAllEmployees').click(function () {  //Here we define click event with this id to perform
+                //this anonymous function when a click happens
+                $.ajax({                    //Here we are making the AJAX request and it needs some parameters
+                    type: 'GET',
+                    url: "http://localhost:59634/api/Employees/",//Absolute URL
+                    dataType: 'jsonp',
+                    success: function (data) { //On succesful execution of ajax we call this anonymous function
+
+                        empList.empty();
+                        $.each(data, function (index, val) { // here we can define a function or can call any other function
+                            //@param collection The object or array to iterate over. here it is DATA
+                            //* @param callback The function that will be executed on every object.Will break the loop by returning false.
+                            //* @returns the first argument, the object that is iterated.
+
+                            var fullName = val.FirstName + ' ' + val.LastName;
+                            empList.append('<li>' + fullName); //+ '</li>' );
+
+                        });//End of $.each
+
+                    }//End of Ajax Success function
+
+                });//End of Ajax request
+
+            });//End of #btnGetAllEmployees click function
+
+            //Get All the MALE button function
+            $('#btnGetMaleEmployees').click(function () {  //Here we define click event with this id to perform
+                //this anonymous function when a click happens
+                $.ajax({                    //Here we are making the AJAX request and it needs some parameters
+                    type: 'GET',
+                    url: "http://localhost:59634/api/Employees/",//Absolute URL
+                    dataType: 'jsonp',
+                    success: function (data) { //On succesful execution of ajax we call this anonymous function
+
+                        empList.empty();
+                        $.each(data, function (index, val) { // here we can define a function or can call any other function
+                            //@param collection The object or array to iterate over. here it is DATA
+                            //* @param callback The function that will be executed on every object.Will break the loop by returning false.
+                            //* @returns the first argument, the object that is iterated.
+                            if (val.Gender == 'Male') {
+                                var fullName = val.FirstName + ' ' + val.LastName;
+                                empList.append('<li>' + fullName); //+ '</li>' );
+                            }//End of if
+                        });//End of $.each
+
+                    }//End of Ajax Success function
+
+                });//End of Ajax request
+
+            });//End of #btnGetMaleEmployees click function
+
+            //Get All the FEMALE button function
+            $('#btnGetFemaleEmployees').click(function () {  //Here we define click event with this id to perform
+                //this anonymous function when a click happens
+                $.ajax({                    //Here we are making the AJAX request and it needs some parameters
+                    type: 'GET',
+                    url: "http://localhost:59634/api/Employees/",//Absolute URL
+                    dataType: 'jsonp',
+                    success: function (data) { //On succesful execution of ajax we call this anonymous function
+
+                        empList.empty();
+                        $.each(data, function (index, val) { // here we can define a function or can call any other function
+                            //@param collection The object or array to iterate over. here it is DATA
+                            //* @param callback The function that will be executed on every object.Will break the loop by returning false.
+                            //* @returns the first argument, the object that is iterated.
+                            if (val.Gender == 'Female') {
+                                var fullName = val.FirstName + ' ' + val.LastName;
+                                empList.append('<li>' + fullName); //+ '</li>' );
+                            }//End of if
+                        });//End of $.each
+
+                    }//End of Ajax Success function
+
+                });//End of Ajax request
+
+            });//End of #btnGetMaleEmployees click function
+
+            //Clear Button function
+            $('#btnClear').click(function () {
+                empList.empty();
+            });//End of btnClear Click function
+
+            //var clicks = 1;
+            //$('#btnCount').click(function () { clicks++; $('#count').html(clicks); });
+
+        });//End of doc ready
+
+    </script>
+
+</head>
+<body>
+
+    <input type="button" id="btnGetAllEmployees" value="Get All Employees" />
+    <input type="button" id="btnGetMaleEmployees" value="Get Male Employees" />
+    <input type="button" id="btnGetFemaleEmployees" value="Get Female Employees" />
+    &nbsp;
+    <input type="button" id="btnClear" value="Clear All" />
+    <h3>List of Employees</h3>
+    <ul id="empList" />
+
+    <!--<input type="button" id="btnCount" value="Click" />
+    <h1 id="count">1</h1>-->
+
+</body>
+</html>
