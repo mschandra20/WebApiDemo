@@ -10,15 +10,29 @@ namespace EmployeeWEBAPIDEMO.Controllers
 {
     public class EmployeesController : ApiController
     {
-        public HttpResponseMessage Get()
+        
+        public HttpResponseMessage Get(string gender = "All")
         {
             try
             {
                 using (EmployeeDBEntities entities = new EmployeeDBEntities())
                 {
-                    var EmployeeList = entities.Employees.ToList();
+                    switch (gender.ToUpper())
+                    {
+                        case "ALL":
+                            return Request.CreateResponse(HttpStatusCode.OK,
+                                entities.Employees.ToList());
+                        case "MALE":
+                            return Request.CreateResponse(HttpStatusCode.OK,
+                                entities.Employees.Where(e => e.Gender.ToUpper() == "MALE").ToList());
+                        case "FEMALE":
+                            return Request.CreateResponse(HttpStatusCode.OK,
+                                entities.Employees.Where(e => e.Gender.ToUpper() == "FEMALE").ToList());
+                        default:
+                            return Request.CreateResponse(HttpStatusCode.NotFound,
+                                "The given gender value " +  gender  + " is not valid. It accepts only All, Male, Female");
+                    }
 
-                    return Request.CreateResponse(HttpStatusCode.OK, EmployeeList);
                 }
             }
             catch (Exception ex)
@@ -28,8 +42,7 @@ namespace EmployeeWEBAPIDEMO.Controllers
 
             }
         }
-
-
+        
         public HttpResponseMessage Get(int id)
         {
             try
@@ -50,7 +63,6 @@ namespace EmployeeWEBAPIDEMO.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
-
 
         //Here for this post method if we don't return anything then we get HttpResponse code of 
         // 204 No Content(Actually we dont want this reponse)
@@ -86,7 +98,6 @@ namespace EmployeeWEBAPIDEMO.Controllers
             }
         }
 
-
         public HttpResponseMessage Delete(int id)
         {
             try
@@ -111,9 +122,10 @@ namespace EmployeeWEBAPIDEMO.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
-
-
-        public HttpResponseMessage Put(int id, [FromBody]Employee employee)
+        
+        //Here we are forcing the web api controller to take the id parameter from RequestBody and
+        // the employee data with which we need to update in the Uri
+        public HttpResponseMessage Put([FromBody] int id, [FromUri] Employee employee)
         {
             try
             {
@@ -143,8 +155,7 @@ namespace EmployeeWEBAPIDEMO.Controllers
             }
         }
 
-
-
+        
 
 
         //This method logs error to txt file

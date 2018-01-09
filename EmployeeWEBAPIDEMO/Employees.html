@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-1.10.2.js"></script>
+
+    <script type="text/javascript">
+
+         $(document).ready(function () {     //Here we are telling to do this anonymous function when the DOM is ready
+
+             var empList = $('#empList'); //Getting empList from the id used below
+
+             $('#btnGetAllEmployees').click(function () {  //Here we define click event with this id to perform
+                 //this anonymous function when a click happens
+                 $.ajax({                    //Here we are making the AJAX request and it needs some parameters
+                     type: 'GET',
+                     url: "api/Employees/",
+                     dataType: 'json',
+                     success: function (data) { //On succesful execution of ajax we call this anonymous function
+
+                         empList.empty();
+                         $.each(data, function (index, val) {
+
+                             var fullName = val.FirstName + ' ' + val.LastName;
+                             empList.append('<li>' + fullName); //+ '</li>' );
+
+                         });//End of $each
+
+                     }//End of Ajax Success function
+
+                 });//End of Ajax request
+
+             });//End of #btnGetAllEmployees click function
+
+             $('#btnClear').click(function () {
+                 empList.empty();
+             });//End of btnClear Click function
+
+
+         });//End of doc ready
+
+    </script>
+    
+</head>
+<body>
+   
+    <input type="button" id="btnGetAllEmployees"  value="Get All Employees"/>
+    <input type="button" id="btnClear" value="Clear All"/>
+    <ul id="empList"/>
+</body>
+</html>
