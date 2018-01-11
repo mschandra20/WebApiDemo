@@ -1,6 +1,5 @@
 ﻿using EmployeeDataAccess;
 using System;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -13,10 +12,13 @@ namespace EmployeeWEBAPIDEMO.Controllers
         
         public HttpResponseMessage Get(string gender = "All")
         {
+
+          
             try
             {
                 using (EmployeeDBEntities entities = new EmployeeDBEntities())
                 {
+
                     switch (gender.ToUpper())
                     {
                         case "ALL":
@@ -30,14 +32,15 @@ namespace EmployeeWEBAPIDEMO.Controllers
                                 entities.Employees.Where(e => e.Gender.ToUpper() == "FEMALE").ToList());
                         default:
                             return Request.CreateResponse(HttpStatusCode.NotFound,
-                                "The given gender value " +  gender  + " is not valid. It accepts only All, Male, Female");
+                                "The given gender value " + gender + " is not valid. It accepts only All, Male, Female");
                     }
 
                 }
             }
             catch (Exception ex)
             {
-                ErrorLogger(ex);
+                ErrorClass er = new ErrorClass();
+                er.ErrorLogger(ex);
                 return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
 
             }
@@ -59,7 +62,8 @@ namespace EmployeeWEBAPIDEMO.Controllers
             }
             catch (Exception ex)
             {
-                ErrorLogger(ex);
+                ErrorClass er = new ErrorClass();
+                er.ErrorLogger(ex);
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
@@ -92,7 +96,8 @@ namespace EmployeeWEBAPIDEMO.Controllers
             {
                 //var ErrorMessage = Request.CreateErrorResponse(HttpStatusCode.BadRequest,"THERE IS SOMETHING WRONG IN INPUT");
                 var ErrorMessage = Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
-                ErrorLogger(ex);
+            ErrorClass er = new ErrorClass();
+                er.ErrorLogger(ex);
 
                 return ErrorMessage;
             }
@@ -118,7 +123,8 @@ namespace EmployeeWEBAPIDEMO.Controllers
             }
             catch (Exception ex)
             {
-                ErrorLogger(ex);
+                ErrorClass er = new ErrorClass();
+                er.ErrorLogger(ex);
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
@@ -150,7 +156,8 @@ namespace EmployeeWEBAPIDEMO.Controllers
             }
             catch (Exception ex)
             {
-                ErrorLogger(ex);
+                ErrorClass er = new ErrorClass();
+                er.ErrorLogger(ex);
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
@@ -158,19 +165,26 @@ namespace EmployeeWEBAPIDEMO.Controllers
         
 
 
-        //This method logs error to txt file
-        private static void ErrorLogger(Exception ex)
-        {
-            string path = @"C:\Users\SHARATHCHANDRA\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeWEBAPIDEMO\ErrorLogFile\ErrorLogger.txt";
-            using (StreamWriter writer = new StreamWriter(path, true))
-            {
-                writer.WriteLine("Message: " + ex.Message + "\n"
-                                + "StackTrace: " + ex.StackTrace
-                                + "Date: " + DateTime.Now
-                                + Environment.NewLine);
-
-                writer.WriteLine(Environment.NewLine + "------------------------------------");
-            }
-        }
+        ////This method logs error to txt file
+        //private static void ErrorLogger(Exception ex)
+        //{
+        //    string path = @"C:\Users\SHARATHCHANDRA\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeWEBAPIDEMO\ErrorLogFile\ErrorLogger.txt";
+        //    using (StreamWriter writer = new StreamWriter(path, true))
+        //    {
+        //        writer.WriteLine(Environment.NewLine
+        //                            + "Message: " + ex.Message
+        //                            + Environment.NewLine
+        //                            + "StackTrace: " + ex.StackTrace
+        //                            + Environment.NewLine
+        //                            + "Date: " + DateTime.Now
+        //                            + Environment.NewLine
+        //                            + "Source: " + ex.Source
+        //                            + Environment.NewLine);
+        //        for (int i = 0; i < 5; i++)
+        //        {
+        //            writer.Write("------------------------------------");
+        //        }
+        //    }
+        //}
     }
 }

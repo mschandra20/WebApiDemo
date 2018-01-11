@@ -45,7 +45,7 @@
                  $.ajax({                    //Here we are making the AJAX request and it needs some parameters
                      type: 'GET',
                      url: "api/Employees",
-                     dataType: 'jsonp',
+                     dataType: 'json',
                      success: function (data) { //On succesful execution of ajax we call this anonymous function
 
                          empList.empty();
@@ -71,7 +71,7 @@
                  $.ajax({                    //Here we are making the AJAX request and it needs some parameters
                      type: 'GET',
                      url: "api/Employees/",
-                     dataType: 'jsonp',
+                     dataType: 'json',
                      success: function (data) { //On succesful execution of ajax we call this anonymous function
 
                          empList.empty();

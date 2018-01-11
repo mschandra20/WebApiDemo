@@ -1,6 +1,4 @@
 ﻿using System.Web.Http;
-using System.Web.Http.Cors;
-using WebApiContrib.Formatting.Jsonp;
 
 namespace EmployeeWEBAPIDEMO
 {
@@ -18,6 +16,10 @@ namespace EmployeeWEBAPIDEMO
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings
+            .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            GlobalConfiguration.Configuration.Formatters
+                .Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
 
             //config.Formatters.JsonFormatter.SerializerSettings.Formatting =
             //    Newtonsoft.Json.Formatting.Indented;
@@ -25,13 +27,13 @@ namespace EmployeeWEBAPIDEMO
             //config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = 
             //    new CamelCasePropertyNamesContractResolver();
 
-            config.Formatters.Remove(config.Formatters.XmlFormatter);
+            //config.Formatters.Remove(config.Formatters.XmlFormatter);
 
-            var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
-            config.Formatters.Insert(0,jsonpFormatter);//At zero index we are inserting the above object
+            //var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
+            //config.Formatters.Insert(0,jsonpFormatter);//At zero index we are inserting the above object
 
-            EnableCorsAttribute cors = new EnableCorsAttribute("*","*","*");
-            config.EnableCors(cors);
+            //EnableCorsAttribute cors = new EnableCorsAttribute("*","*","*");
+            //config.EnableCors(cors);
 
         }
     }
