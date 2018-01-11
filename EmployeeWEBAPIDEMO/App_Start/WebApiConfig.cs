@@ -21,13 +21,13 @@ namespace EmployeeWEBAPIDEMO
             GlobalConfiguration.Configuration.Formatters
                 .Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
 
-            //config.Formatters.JsonFormatter.SerializerSettings.Formatting =
-            //    Newtonsoft.Json.Formatting.Indented;
+            config.Formatters.JsonFormatter.SerializerSettings.Formatting =
+                Newtonsoft.Json.Formatting.Indented;
 
             //config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = 
             //    new CamelCasePropertyNamesContractResolver();
 
-            //config.Formatters.Remove(config.Formatters.XmlFormatter);
+            // config.Formatters.Remove(config.Formatters.XmlFormatter);
 
             //var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
             //config.Formatters.Insert(0,jsonpFormatter);//At zero index we are inserting the above object
