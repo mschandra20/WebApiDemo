@@ -9,29 +9,24 @@ namespace EmployeeWEBAPIDEMO.Controllers
 {
     public class AdventureController : ApiController
     {
-        public HttpResponseMessage GetPeople(string gender = "All")
+        public HttpResponseMessage GetPeople()
         {
             try
             {
                 using (AdventureWorksEntities entities = new AdventureWorksEntities())
                 {
-
-                    switch (gender.ToUpper())
+                    if (typeof(AdventureWorksEntities).IsSerializable)//By this we came to know 
+                                                    //AdventureWorksEntities class is not serializable
                     {
-                        case "ALL":
-                            return Request.CreateResponse(HttpStatusCode.OK,
-                                entities.Addresses.Where(a=>a.City=="Renton").ToList());
-                        //case "MR":
-                        //    return Request.CreateResponse(HttpStatusCode.OK,
-                        //        entities.People.Where(e => e.Title.ToUpper() == "MR").ToList());
-                        //case "MS":
-                        //    return Request.CreateResponse(HttpStatusCode.OK,
-                        //        entities.People.Where(e => e.Title.ToUpper() == "MS").ToList());
-                        default:
-                            return Request.CreateResponse(HttpStatusCode.NotFound,
-                                "The given gender value " + gender + " is not valid. It accepts only All, MR, MS");
+
+                        return Request.CreateResponse(HttpStatusCode.OK,
+                                   entities.Addresses.Where(y => y.City == "Renton").Take(100).ToList());
+
+                        // return Request.CreateResponse(HttpStatusCode.NotFound,
                     }
 
+                    return Request.CreateResponse(HttpStatusCode.NotFound, 
+                        "The requested object is not serilizable");
                 }
             }
             catch (Exception ex)
