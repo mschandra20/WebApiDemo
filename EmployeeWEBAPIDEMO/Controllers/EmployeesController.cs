@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace EmployeeWEBAPIDEMO.Controllers
 {
+    [RequireHttps]
     public class EmployeesController : ApiController
     {
         
@@ -56,7 +57,8 @@ namespace EmployeeWEBAPIDEMO.Controllers
                     if (empObj != null)
                         return Request.CreateResponse(HttpStatusCode.OK, empObj);
                     else
-                        return Request.CreateResponse(HttpStatusCode.NotFound, "The Employee with ID = " + id + " is NOT found");
+                        return Request.CreateResponse(HttpStatusCode.NotFound, 
+                            "The Employee with ID = " + id + " is NOT found");
 
                 }
             }

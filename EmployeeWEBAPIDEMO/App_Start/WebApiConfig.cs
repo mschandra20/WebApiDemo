@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace EmployeeWEBAPIDEMO
 {
@@ -32,8 +33,10 @@ namespace EmployeeWEBAPIDEMO
             //var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
             //config.Formatters.Insert(0,jsonpFormatter);//At zero index we are inserting the above object
 
-            //EnableCorsAttribute cors = new EnableCorsAttribute("*","*","*");
-            //config.EnableCors(cors);
+            EnableCorsAttribute cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
+
+            config.Filters.Add(new RequireHttpsAttribute());
 
         }
     }
