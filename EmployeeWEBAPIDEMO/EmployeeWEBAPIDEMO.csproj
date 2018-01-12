@@ -192,16 +192,18 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Attributes\BasicAuthenticationAttribute.cs" />
     <Compile Include="Controllers\AdventureController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ErrorClass.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="EmployeeSecurity.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequireHttpsAttribute.cs" />
+    <Compile Include="Attributes\RequireHttpsAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Address.html" />

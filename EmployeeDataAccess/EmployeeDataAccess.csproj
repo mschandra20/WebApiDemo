@@ -204,6 +204,9 @@
     <Compile Include="ufnGetContactInformation_Result.cs">
       <DependentUpon>AdventureWorks.tt</DependentUpon>
     </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>EmployeeDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="uspGetBillOfMaterials_Result.cs">
       <DependentUpon>AdventureWorks.tt</DependentUpon>
     </Compile>

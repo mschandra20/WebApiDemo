@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using EmployeeWEBAPIDEMO.Attributes;
+using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace EmployeeWEBAPIDEMO
@@ -37,7 +38,7 @@ namespace EmployeeWEBAPIDEMO
             config.EnableCors(cors);
 
             config.Filters.Add(new RequireHttpsAttribute());
-
+            config.Filters.Add(new BasicAuthenticationAttribute());
         }
     }
 }

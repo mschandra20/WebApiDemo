@@ -1,30 +1,32 @@
 ﻿using EmployeeDataAccess;
+using EmployeeWEBAPIDEMO.Attributes;
 using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Web.Http;
 
 namespace EmployeeWEBAPIDEMO.Controllers
 {
-    [RequireHttps]
+    // [RequireHttps]
+    [BasicAuthentication]
     public class EmployeesController : ApiController
     {
         
-        public HttpResponseMessage Get(string gender = "All")
+        public HttpResponseMessage Get()
         {
-
-          
             try
             {
+                string username = Thread.CurrentPrincipal.Identity.Name;
                 using (EmployeeDBEntities entities = new EmployeeDBEntities())
                 {
 
-                    switch (gender.ToUpper())
+                    switch (username.ToUpper())
                     {
-                        case "ALL":
-                            return Request.CreateResponse(HttpStatusCode.OK,
-                                entities.Employees.ToList());
+                        //case "ALL":
+                        //    return Request.CreateResponse(HttpStatusCode.OK,
+                        //        entities.Employees.ToList());
                         case "MALE":
                             return Request.CreateResponse(HttpStatusCode.OK,
                                 entities.Employees.Where(e => e.Gender.ToUpper() == "MALE").ToList());
@@ -32,8 +34,8 @@ namespace EmployeeWEBAPIDEMO.Controllers
                             return Request.CreateResponse(HttpStatusCode.OK,
                                 entities.Employees.Where(e => e.Gender.ToUpper() == "FEMALE").ToList());
                         default:
-                            return Request.CreateResponse(HttpStatusCode.NotFound,
-                                "The given gender value " + gender + " is not valid. It accepts only All, Male, Female");
+                            return Request.CreateResponse(HttpStatusCode.BadRequest);
+                            //"The given gender value " + gender + " is not valid. It accepts only All, Male, Female");
                     }
 
                 }
@@ -163,30 +165,6 @@ namespace EmployeeWEBAPIDEMO.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
-
-        
-
-
-        ////This method logs error to txt file
-        //private static void ErrorLogger(Exception ex)
-        //{
-        //    string path = @"C:\Users\SHARATHCHANDRA\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeWEBAPIDEMO\ErrorLogFile\ErrorLogger.txt";
-        //    using (StreamWriter writer = new StreamWriter(path, true))
-        //    {
-        //        writer.WriteLine(Environment.NewLine
-        //                            + "Message: " + ex.Message
-        //                            + Environment.NewLine
-        //                            + "StackTrace: " + ex.StackTrace
-        //                            + Environment.NewLine
-        //                            + "Date: " + DateTime.Now
-        //                            + Environment.NewLine
-        //                            + "Source: " + ex.Source
-        //                            + Environment.NewLine);
-        //        for (int i = 0; i < 5; i++)
-        //        {
-        //            writer.Write("------------------------------------");
-        //        }
-        //    }
-        //}
+                
     }
 }

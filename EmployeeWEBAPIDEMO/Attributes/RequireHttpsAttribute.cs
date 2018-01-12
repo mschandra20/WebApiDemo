@@ -5,7 +5,7 @@ using System.Text;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 
-namespace EmployeeWEBAPIDEMO
+namespace EmployeeWEBAPIDEMO.Attributes
 {
     public class RequireHttpsAttribute: AuthorizationFilterAttribute
     {
