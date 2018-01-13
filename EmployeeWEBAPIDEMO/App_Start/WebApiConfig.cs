@@ -37,7 +37,7 @@ namespace EmployeeWEBAPIDEMO
             EnableCorsAttribute cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
 
-            config.Filters.Add(new RequireHttpsAttribute());
+           // config.Filters.Add(new RequireHttpsAttribute());
             config.Filters.Add(new BasicAuthenticationAttribute());
         }
     }

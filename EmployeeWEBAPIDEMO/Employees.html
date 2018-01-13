@@ -10,17 +10,19 @@
 
              var empList = $('#empList'); //Getting empList from the id used below
 
-             var username = $('txtUsername').val();
-             var password = $('txtUsername').val();
+             
              //Get all employees button
              $('#btnGetAllEmployees').click(function () {  //Here we define click event with this id to perform
                  //this anonymous function when a click happens
+                 var username = $('#txtUsername').val();
+                 var password = $('#txtPassword').val();
+
                  $.ajax({                    //Here we are making the AJAX request and it needs some parameters
                      type: 'GET',
                      url: "api/Employees/",
                      dataType: 'json',
-                     header: {
-                         'Authorization': 'Basic ' + btoa(username +':'+ password)
+                     headers: {
+                         'Authorization' : 'Basic ' + btoa(username +':'+ password)
                      },
                      success: function (data) { //On succesful execution of ajax we call this anonymous function
 
@@ -31,7 +33,7 @@
                           //* @returns the first argument, the object that is iterated.
 
                              var fullName = val.FirstName + ' ' + val.LastName;
-                             empList.append('<li>' + fullName + '(' + val.Gender+')</li>'); //+ '</li > ' );
+                             empList.append('<li>' + fullName + ' (' + val.Gender+')</li>'); //+ '</li > ' );
 
                          });//End of $.each
 
@@ -124,8 +126,8 @@
     Password: <input type="password" id="txtPassword" />
     
     <input type="button" id="btnGetAllEmployees"  value="Authenticate and Get Employees"/>
-    <input type="button" id="btnGetMaleEmployees" value="Get Male Employees" />
-    <input type="button" id="btnGetFemaleEmployees" value="Get Female Employees" />
+    <!--<input type="button" id="btnGetMaleEmployees" value="Get Male Employees" />
+    <input type="button" id="btnGetFemaleEmployees" value="Get Female Employees" />-->
     &nbsp;
     <input type="button" id="btnClear" value="Clear All"/>
     <h3>List of Employees</h3>
