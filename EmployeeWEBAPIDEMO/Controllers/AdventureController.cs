@@ -31,8 +31,7 @@ namespace EmployeeWEBAPIDEMO.Controllers
             }
             catch (Exception ex)
             {
-                ErrorClass er = new ErrorClass();
-                er.ErrorLogger(ex);
+                ErrorClass.ErrorLogger(ex);
                 return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
 
             }
@@ -54,8 +53,7 @@ namespace EmployeeWEBAPIDEMO.Controllers
             }
             catch (Exception ex)
             {
-                ErrorClass er = new ErrorClass();
-                er.ErrorLogger(ex);
+                ErrorClass.ErrorLogger(ex);
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
@@ -88,8 +86,7 @@ namespace EmployeeWEBAPIDEMO.Controllers
             {
                 //var ErrorMessage = Request.CreateErrorResponse(HttpStatusCode.BadRequest,"THERE IS SOMETHING WRONG IN INPUT");
                 var ErrorMessage = Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
-                ErrorClass er = new ErrorClass();
-                er.ErrorLogger(ex);
+                ErrorClass.ErrorLogger(ex);
 
                 return ErrorMessage;
             }
@@ -115,8 +112,7 @@ namespace EmployeeWEBAPIDEMO.Controllers
             }
             catch (Exception ex)
             {
-                ErrorClass er = new ErrorClass();
-                er.ErrorLogger(ex);
+                ErrorClass.ErrorLogger(ex);
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
@@ -148,8 +144,7 @@ namespace EmployeeWEBAPIDEMO.Controllers
             }
             catch (Exception ex)
             {
-                ErrorClass er = new ErrorClass();
-                er.ErrorLogger(ex);
+                ErrorClass.ErrorLogger(ex);
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }

@@ -30,13 +30,13 @@ btn:hover {
     transition-duration: 0.3s;
 }
 
-.btn-logoff {
+.btnCustom {
     background-color: #12746f;
     border-color: #12746f;
     margin-right: 10px;
     transition-duration: 0.3s;
 }
-    .btn-logoff:hover {
+    .btnCustom:hover {
         background-color: #0a3e3c;
         border-color: #0a3e3c;
         color:white;

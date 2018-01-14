@@ -3,16 +3,16 @@ using System.IO;
 
 namespace EmployeeWEBAPIDEMO.Controllers
 {
-    interface IError
-    {
-        //This method logs error to txt file
-        void ErrorLogger(Exception ex);
+    //static interface IError
+    // {
+    //     //This method logs error to txt file
+    //     void ErrorLogger(Exception ex);
 
-    }
-    class ErrorClass:IError
+    // }
+    public static class ErrorClass//:IError
     {
         //This method logs error to txt file
-       public void ErrorLogger(Exception ex)
+       public static void ErrorLogger(Exception ex)
         {
             string filename="OtherErrors";
             if (ex.StackTrace.Contains("EmployeesController"))
