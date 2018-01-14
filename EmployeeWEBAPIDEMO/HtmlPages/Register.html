@@ -3,22 +3,40 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <script src="../Scripts/jquery-1.10.2.js"></script>
+
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <link href="../Content/Style.css" rel="stylesheet" />
+
 </head>
+
 <body>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+           
+             $('#btnRegister').click(function () {
+                 $('#successModal').modal('show');
+
+            });//End btnRegister click 
+            $('#dateFooter').append(Date.now);
+         });//end ready()
+
+    </script>
+
     <section class="page-header   navbar navbar-fixed-top Eheader">
         <h2>Employee Management Portal</h2>
     </section>
-    <section class="body-content  col-lg-8 col-md-offset-2 EContent">
+    <section class="body-content  col-lg-6 col-md-offset-3 EContent">
         <table class="table">
             <tr colspan="2">
                 <td><h3>Register Form</h3></td>
             </tr>
             <tr>
-                <td>Email</td>
-                <td><input class="form-control" type="text" placeholder="john.right@left.com" id="txtEmail"/></td>
+                <td class="col-lg-6">Email</td>
+                <td class="col-lg-6"><input class="form-control" type="text" placeholder="john.right@left.com" id="txtEmail"/></td>
              </tr>
             <tr>
                 <td>Password</td>
@@ -30,14 +48,37 @@
             </tr>
             <tr colspan="2">
                 <td>
-                    <input class="btn" type="button" value="Register" />
+                    <input class="btn" type="button" value="Register" id="btnRegister" />
                 </td>
             </tr>
         </table>
+        <div class="modal fade" tabindex="-1" id="successModal"
+             data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                        <h4>Success</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Registration Successful</h2>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn-success btnCustom">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="panel-footer navbar navbar-fixed-bottom Efooter">
        <script>Date.now</script>
-        2017 &copy; All rights Reserved
+        <p id="dateFooter"></p> &copy; All rights Reserved
     </section>
+
+   
 </body>
 </html>

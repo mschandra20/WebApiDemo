@@ -105,7 +105,7 @@
 
                 });//End of Ajax request
 
-            });//End of #btnGetMaleEmployees click function
+            });//End of #btnGetFemaleEmployees click function
 
 
             //Clear Button function
@@ -128,23 +128,39 @@
 
     <section class="body-content  col-lg-8 col-md-offset-2 EContent">
         <div style="padding-top:30px; padding-left:20px">
-            Username: <input class="form-control" type="text" id="txtUsername" />
-            Password: <input class="form-control" type="password" id="txtPassword" /><br />
-            <input class="btn" type="button" id="btnGetAllEmployees" value="Authenticate and Get Employees" />
+            <table class="table">
+                <tr>
+                    <td>Username:</td>
+                    <td><input class="form-control" type="text" id="txtUsername" /></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input class="form-control" type="password" id="txtPassword" /></td>
+                <tr colspan="2">
+                    <td>
+                        <input class="btn btnCustom" type="button" id="btnClear" value="Clear All" />
+                    </td>
+                    <td>
+                        <input class="btn btnCustom" type="button" id="btnGetAllEmployees" value="Authenticate and Get Employees" />
+                    </td>
+                </tr>
+            </table>
             <!--<input type="button" id="btnGetMaleEmployees" value="Get Male Employees" />
             <input type="button" id="btnGetFemaleEmployees" value="Get Female Employees" />-->
-            &nbsp;
-            <input class="btn" type="button" id="btnClear" value="Clear All" />
+          
             <h3>Employee Data</h3>
             <h4> <ul style="list-style:circle" id="empList" /></h4>
+            
         </div>
+
+
     </section>
 
     <section class="panel-footer navbar navbar-fixed-bottom Efooter">
         2017 &copy; All rights Reserved
     </section>
 
-    
+
 
 </body>
 </html>
