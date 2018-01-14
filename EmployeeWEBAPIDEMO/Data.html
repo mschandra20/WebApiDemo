@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>WEB API PAGE</title>
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Style.css" rel="stylesheet" />
+    <script type="text/javascript">
+
+        $(document).ready(function () {     //Here we are telling to do this anonymous function when the DOM is ready
+
+            var empList = $('#empList'); //Getting empList from the id used below
+
+
+            //Get all employees button
+            $('#btnGetAllEmployees').click(function () {  //Here we define click event with this id to perform
+                //this anonymous function when a click happens
+                var username = $('#txtUsername').val();
+                var password = $('#txtPassword').val();
+
+                $.ajax({                    //Here we are making the AJAX request and it needs some parameters
+                    type: 'GET',
+                    url: "api/Employees/",
+                    dataType: 'json',
+                    headers: {
+                        'Authorization': 'Basic ' + btoa(username + ':' + password)
+                    },
+                    success: function (data) { //On succesful execution of ajax we call this anonymous function
+
+                        empList.empty();
+                        $.each(data, function (index, val) { // here we can define a function or can call any other function
+                            //@param collection The object or array to iterate over. here it is DATA
+                            //* @param callback The function that will be executed on every object.Will break the loop by returning false.
+                            //* @returns the first argument, the object that is iterated.
+
+                            var fullName = val.FirstName + ' ' + val.LastName;
+                            empList.append('<li>' + fullName + ' (' + val.Gender + ')</li>'); //+ '</li > ' );
+
+                        });//End of $.each
+
+                    },//End of Ajax Success function
+
+                    complete: function (jqXHR) {
+                        if (jqXHR.status == '401') {
+                            empList.empty();
+                            empList.append('<li style="color:red">'
+                                + jqXHR.status + ':' + jqXHR.statusText + '</li>')
+
+                        }
+                    }
+
+                });//End of Ajax request
+
+            });//End of #btnGetAllEmployees click function
+
+           
+            //Clear Button function
+            $('#btnClear').click(function () {
+                empList.empty();
+            });//End of btnClear Click function
+
+            //var clicks = 1;
+            //$('#btnCount').click(function () { clicks++; $('#count').html(clicks); });
+
+        });//End of doc ready
+
+    </script>
+
+</head>
+<body>
+    <section class="page-header navbar navbar-fixed-top Eheader">
+        <h2 style="padding-left:10px;" class="col-md-10" >
+            Employee Management Portal
+        </h2>
+        <input class="btn navbar-right col-md-1 btn-logoff" style="margin-top:10px;" type="button" id="btnLogOff" value="Log off" />
+    </section>
+
+    <section class="body-content  col-md-8 col-md-offset-2 EContent">
+        <div style="padding-top:30px; padding-left:20px">
+            <input class="btn navbar-left" type="button" id="btnGetAllEmployees" value="Get Employees" />
+           
+            <br />
+            
+            <h3>Employee Data</h3>
+            <h4> <ul style="list-style:circle" id="empList" /></h4>
+        </div>
+    </section>
+
+    <section class="panel-footer navbar navbar-fixed-bottom Efooter">
+        2017 &copy; All rights Reserved
+    </section>
+
+
+
+</body>
+</html>

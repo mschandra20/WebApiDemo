@@ -20,6 +20,26 @@
 }
 
 .btn {
-    color:#0f3c39;
+    color:#ffffff;
     background-color:lightseagreen;
+    transition-duration:0.3s;
 }
+
+btn:hover {
+    
+    transition-duration: 0.3s;
+}
+
+.btn-logoff {
+    background-color: #12746f;
+    border-color: #12746f;
+    margin-right: 10px;
+    transition-duration: 0.3s;
+}
+    .btn-logoff:hover {
+        background-color: #0a3e3c;
+        border-color: #0a3e3c;
+        color:white;
+       
+        transition-duration: 0.3s;
+    }
