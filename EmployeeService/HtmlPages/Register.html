@@ -20,8 +20,25 @@
             $('#linkClose').click(function () {
                 $('#divError').hide('fade');
             });
-             $('#btnRegister').click(function () {
-                 $('#successModal').modal('show');
+            $('#btnRegister').click(function () {
+                $.ajax({
+                    url:'/api/account/register',
+                    method: 'POST',
+                    data: {
+                        email: $('#txtEmail').val(),
+                        password: $('#txtPassword').val(),
+                        confirmPassword: $('#txtConfirmPassword').val(),
+                    },
+                    success: function () {
+                        $('#successModal').modal('show');
+                    },
+                    error: function (jqXHR) {
+                        $('#divErrorText').text(jqXHR.statusText);
+                        $('#divError').show('fade');
+                    }
+                });
+
+                
 
             });//End btnRegister click 
             
@@ -39,19 +56,19 @@
             </tr>
             <tr>
                 <td class="col-lg-6">Email</td>
-                <td class="col-lg-6"><input class="form-control" type="text" placeholder="john.right@left.com" id="txtEmail"/></td>
+                <td  id="txtEmail" class="col-lg-6"><input class="form-control" type="text" placeholder="john.right@left.com" /></td>
              </tr>
             <tr>
                 <td>Password</td>
-                <td><input class="form-control" type="password" placeholder="Password" id="txtPassword" /></td>
+                <td><input id="txtPassword" class="form-control" type="password" placeholder="Password"  /></td>
             </tr>
             <tr>
                 <td>Confirm Password</td>
-                <td><input class="form-control" type="password" placeholder="Confirm Password" id="txtConfirmPassword" /></td>
+                <td><input id="txtConfirmPassword" class="form-control" type="password" placeholder="Confirm Password"  /></td>
             </tr>
             <tr colspan="2">
                 <td>
-                    <input class="btn" type="button" value="Register" id="btnRegister" />
+                    <input id="btnRegister" class="btn" type="button" value="Register" />
                 </td>
             </tr>
         </table>
@@ -78,7 +95,7 @@
         </div>
         <div id="divError" class="alert alert-danger collapse">
             <a id="linkClose" class="close" href="#">&times;</a>
-            <div class="divErrorText"></div>
+            <div id="divErrorText"></div>
         </div>
     </section>
     <section class="panel-footer navbar navbar-fixed-bottom Efooter">
