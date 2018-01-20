@@ -26,8 +26,8 @@
                     method: 'POST',
                     data: {
                         email: $('#txtEmail').val(),
-                        password: $('#txtPassword').val(),
-                        confirmPassword: $('#txtConfirmPassword').val(),
+                        Password: $('#txtPassword').val(),
+                        ConfirmPassword: $('#txtConfirmPassword').val(),
                     },
                     success: function () {
                         $('#successModal').modal('show');
@@ -55,8 +55,12 @@
                 <td><h3>Register Form</h3></td>
             </tr>
             <tr>
-                <td class="col-lg-6">Email</td>
-                <td  id="txtEmail" class="col-lg-6"><input class="form-control" type="text" placeholder="john.right@left.com" /></td>
+                <td class="col-lg-6">
+                    Email
+                </td>
+                <td class="col-lg-6">
+                    <input id="txtEmail" class="form-control" type="text" placeholder="john.right@left.com" />
+                </td>
              </tr>
             <tr>
                 <td>Password</td>
