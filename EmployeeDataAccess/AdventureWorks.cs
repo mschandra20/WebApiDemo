@@ -7,3 +7,853 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
+public partial class Address
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Address()
+    {
+        this.BusinessEntityAddresses = new HashSet<BusinessEntityAddress>();
+        this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
+        this.SalesOrderHeaders1 = new HashSet<SalesOrderHeader>();
+    }
+
+    public int AddressID { get; set; }
+    public string AddressLine1 { get; set; }
+    public string AddressLine2 { get; set; }
+    public string City { get; set; }
+    public int StateProvinceID { get; set; }
+    public string PostalCode { get; set; }
+    public System.Data.Entity.Spatial.DbGeography SpatialLocation { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual StateProvince StateProvince { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<BusinessEntityAddress> BusinessEntityAddresses { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesOrderHeader> SalesOrderHeaders1 { get; set; }
+}
+
+public partial class AddressType
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public AddressType()
+    {
+        this.BusinessEntityAddresses = new HashSet<BusinessEntityAddress>();
+    }
+
+    public int AddressTypeID { get; set; }
+    public string Name { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<BusinessEntityAddress> BusinessEntityAddresses { get; set; }
+}
+
+public partial class BusinessEntity
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public BusinessEntity()
+    {
+        this.BusinessEntityAddresses = new HashSet<BusinessEntityAddress>();
+        this.BusinessEntityContacts = new HashSet<BusinessEntityContact>();
+    }
+
+    public int BusinessEntityID { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<BusinessEntityAddress> BusinessEntityAddresses { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<BusinessEntityContact> BusinessEntityContacts { get; set; }
+    public virtual Person Person { get; set; }
+    public virtual Store Store { get; set; }
+}
+
+public partial class BusinessEntityAddress
+{
+    public int BusinessEntityID { get; set; }
+    public int AddressID { get; set; }
+    public int AddressTypeID { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual Address Address { get; set; }
+    public virtual AddressType AddressType { get; set; }
+    public virtual BusinessEntity BusinessEntity { get; set; }
+}
+
+public partial class BusinessEntityContact
+{
+    public int BusinessEntityID { get; set; }
+    public int PersonID { get; set; }
+    public int ContactTypeID { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual BusinessEntity BusinessEntity { get; set; }
+    public virtual ContactType ContactType { get; set; }
+    public virtual Person Person { get; set; }
+}
+
+public partial class ContactType
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public ContactType()
+    {
+        this.BusinessEntityContacts = new HashSet<BusinessEntityContact>();
+    }
+
+    public int ContactTypeID { get; set; }
+    public string Name { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<BusinessEntityContact> BusinessEntityContacts { get; set; }
+}
+
+public partial class CountryRegion
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public CountryRegion()
+    {
+        this.CountryRegionCurrencies = new HashSet<CountryRegionCurrency>();
+        this.SalesTerritories = new HashSet<SalesTerritory>();
+        this.StateProvinces = new HashSet<StateProvince>();
+    }
+
+    public string CountryRegionCode { get; set; }
+    public string Name { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<CountryRegionCurrency> CountryRegionCurrencies { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesTerritory> SalesTerritories { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<StateProvince> StateProvinces { get; set; }
+}
+
+public partial class CountryRegionCurrency
+{
+    public string CountryRegionCode { get; set; }
+    public string CurrencyCode { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual CountryRegion CountryRegion { get; set; }
+    public virtual Currency Currency { get; set; }
+}
+
+public partial class CreditCard
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public CreditCard()
+    {
+        this.PersonCreditCards = new HashSet<PersonCreditCard>();
+        this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
+    }
+
+    public int CreditCardID { get; set; }
+    public string CardType { get; set; }
+    public string CardNumber { get; set; }
+    public byte ExpMonth { get; set; }
+    public short ExpYear { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<PersonCreditCard> PersonCreditCards { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
+}
+
+public partial class Currency
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Currency()
+    {
+        this.CountryRegionCurrencies = new HashSet<CountryRegionCurrency>();
+        this.CurrencyRates = new HashSet<CurrencyRate>();
+        this.CurrencyRates1 = new HashSet<CurrencyRate>();
+    }
+
+    public string CurrencyCode { get; set; }
+    public string Name { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<CountryRegionCurrency> CountryRegionCurrencies { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<CurrencyRate> CurrencyRates { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<CurrencyRate> CurrencyRates1 { get; set; }
+}
+
+public partial class CurrencyRate
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public CurrencyRate()
+    {
+        this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
+    }
+
+    public int CurrencyRateID { get; set; }
+    public System.DateTime CurrencyRateDate { get; set; }
+    public string FromCurrencyCode { get; set; }
+    public string ToCurrencyCode { get; set; }
+    public decimal AverageRate { get; set; }
+    public decimal EndOfDayRate { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual Currency Currency { get; set; }
+    public virtual Currency Currency1 { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
+}
+
+public partial class Customer
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Customer()
+    {
+        this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
+    }
+
+    public int CustomerID { get; set; }
+    public Nullable<int> PersonID { get; set; }
+    public Nullable<int> StoreID { get; set; }
+    public Nullable<int> TerritoryID { get; set; }
+    public string AccountNumber { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual Person Person { get; set; }
+    public virtual SalesTerritory SalesTerritory { get; set; }
+    public virtual Store Store { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
+}
+
+public partial class EmailAddress
+{
+    public int BusinessEntityID { get; set; }
+    public int EmailAddressID { get; set; }
+    public string EmailAddress1 { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual Person Person { get; set; }
+}
+
+public partial class ErrorLog
+{
+    public int ErrorLogID { get; set; }
+    public System.DateTime ErrorTime { get; set; }
+    public string UserName { get; set; }
+    public int ErrorNumber { get; set; }
+    public Nullable<int> ErrorSeverity { get; set; }
+    public Nullable<int> ErrorState { get; set; }
+    public string ErrorProcedure { get; set; }
+    public Nullable<int> ErrorLine { get; set; }
+    public string ErrorMessage { get; set; }
+}
+
+public partial class Password
+{
+    public int BusinessEntityID { get; set; }
+    public string PasswordHash { get; set; }
+    public string PasswordSalt { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual Person Person { get; set; }
+}
+
+public partial class Person
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Person()
+    {
+        this.BusinessEntityContacts = new HashSet<BusinessEntityContact>();
+        this.EmailAddresses = new HashSet<EmailAddress>();
+        this.Customers = new HashSet<Customer>();
+        this.PersonCreditCards = new HashSet<PersonCreditCard>();
+        this.PersonPhones = new HashSet<PersonPhone>();
+    }
+
+    public int BusinessEntityID { get; set; }
+    public string PersonType { get; set; }
+    public bool NameStyle { get; set; }
+    public string Title { get; set; }
+    public string FirstName { get; set; }
+    public string MiddleName { get; set; }
+    public string LastName { get; set; }
+    public string Suffix { get; set; }
+    public int EmailPromotion { get; set; }
+    public string AdditionalContactInfo { get; set; }
+    public string Demographics { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual BusinessEntity BusinessEntity { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<BusinessEntityContact> BusinessEntityContacts { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<EmailAddress> EmailAddresses { get; set; }
+    public virtual Password Password { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<Customer> Customers { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<PersonCreditCard> PersonCreditCards { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<PersonPhone> PersonPhones { get; set; }
+}
+
+public partial class PersonCreditCard
+{
+    public int BusinessEntityID { get; set; }
+    public int CreditCardID { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual Person Person { get; set; }
+    public virtual CreditCard CreditCard { get; set; }
+}
+
+public partial class PersonPhone
+{
+    public int BusinessEntityID { get; set; }
+    public string PhoneNumber { get; set; }
+    public int PhoneNumberTypeID { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual Person Person { get; set; }
+    public virtual PhoneNumberType PhoneNumberType { get; set; }
+}
+
+public partial class PhoneNumberType
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public PhoneNumberType()
+    {
+        this.PersonPhones = new HashSet<PersonPhone>();
+    }
+
+    public int PhoneNumberTypeID { get; set; }
+    public string Name { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<PersonPhone> PersonPhones { get; set; }
+}
+
+public partial class SalesOrderDetail
+{
+    public int SalesOrderID { get; set; }
+    public int SalesOrderDetailID { get; set; }
+    public string CarrierTrackingNumber { get; set; }
+    public short OrderQty { get; set; }
+    public int ProductID { get; set; }
+    public int SpecialOfferID { get; set; }
+    public decimal UnitPrice { get; set; }
+    public decimal UnitPriceDiscount { get; set; }
+    public decimal LineTotal { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual SalesOrderHeader SalesOrderHeader { get; set; }
+    public virtual SpecialOfferProduct SpecialOfferProduct { get; set; }
+}
+
+public partial class SalesOrderHeader
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public SalesOrderHeader()
+    {
+        this.SalesOrderDetails = new HashSet<SalesOrderDetail>();
+        this.SalesOrderHeaderSalesReasons = new HashSet<SalesOrderHeaderSalesReason>();
+    }
+
+    public int SalesOrderID { get; set; }
+    public byte RevisionNumber { get; set; }
+    public System.DateTime OrderDate { get; set; }
+    public System.DateTime DueDate { get; set; }
+    public Nullable<System.DateTime> ShipDate { get; set; }
+    public byte Status { get; set; }
+    public bool OnlineOrderFlag { get; set; }
+    public string SalesOrderNumber { get; set; }
+    public string PurchaseOrderNumber { get; set; }
+    public string AccountNumber { get; set; }
+    public int CustomerID { get; set; }
+    public Nullable<int> SalesPersonID { get; set; }
+    public Nullable<int> TerritoryID { get; set; }
+    public int BillToAddressID { get; set; }
+    public int ShipToAddressID { get; set; }
+    public int ShipMethodID { get; set; }
+    public Nullable<int> CreditCardID { get; set; }
+    public string CreditCardApprovalCode { get; set; }
+    public Nullable<int> CurrencyRateID { get; set; }
+    public decimal SubTotal { get; set; }
+    public decimal TaxAmt { get; set; }
+    public decimal Freight { get; set; }
+    public decimal TotalDue { get; set; }
+    public string Comment { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual Address Address { get; set; }
+    public virtual Address Address1 { get; set; }
+    public virtual CreditCard CreditCard { get; set; }
+    public virtual CurrencyRate CurrencyRate { get; set; }
+    public virtual Customer Customer { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesOrderDetail> SalesOrderDetails { get; set; }
+    public virtual SalesPerson SalesPerson { get; set; }
+    public virtual SalesTerritory SalesTerritory { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesOrderHeaderSalesReason> SalesOrderHeaderSalesReasons { get; set; }
+}
+
+public partial class SalesOrderHeaderSalesReason
+{
+    public int SalesOrderID { get; set; }
+    public int SalesReasonID { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual SalesOrderHeader SalesOrderHeader { get; set; }
+    public virtual SalesReason SalesReason { get; set; }
+}
+
+public partial class SalesPerson
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public SalesPerson()
+    {
+        this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
+        this.SalesPersonQuotaHistories = new HashSet<SalesPersonQuotaHistory>();
+        this.SalesTerritoryHistories = new HashSet<SalesTerritoryHistory>();
+        this.Stores = new HashSet<Store>();
+    }
+
+    public int BusinessEntityID { get; set; }
+    public Nullable<int> TerritoryID { get; set; }
+    public Nullable<decimal> SalesQuota { get; set; }
+    public decimal Bonus { get; set; }
+    public decimal CommissionPct { get; set; }
+    public decimal SalesYTD { get; set; }
+    public decimal SalesLastYear { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
+    public virtual SalesTerritory SalesTerritory { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesPersonQuotaHistory> SalesPersonQuotaHistories { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesTerritoryHistory> SalesTerritoryHistories { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<Store> Stores { get; set; }
+}
+
+public partial class SalesPersonQuotaHistory
+{
+    public int BusinessEntityID { get; set; }
+    public System.DateTime QuotaDate { get; set; }
+    public decimal SalesQuota { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual SalesPerson SalesPerson { get; set; }
+}
+
+public partial class SalesReason
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public SalesReason()
+    {
+        this.SalesOrderHeaderSalesReasons = new HashSet<SalesOrderHeaderSalesReason>();
+    }
+
+    public int SalesReasonID { get; set; }
+    public string Name { get; set; }
+    public string ReasonType { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesOrderHeaderSalesReason> SalesOrderHeaderSalesReasons { get; set; }
+}
+
+public partial class SalesTaxRate
+{
+    public int SalesTaxRateID { get; set; }
+    public int StateProvinceID { get; set; }
+    public byte TaxType { get; set; }
+    public decimal TaxRate { get; set; }
+    public string Name { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual StateProvince StateProvince { get; set; }
+}
+
+public partial class SalesTerritory
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public SalesTerritory()
+    {
+        this.StateProvinces = new HashSet<StateProvince>();
+        this.Customers = new HashSet<Customer>();
+        this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
+        this.SalesPersons = new HashSet<SalesPerson>();
+        this.SalesTerritoryHistories = new HashSet<SalesTerritoryHistory>();
+    }
+
+    public int TerritoryID { get; set; }
+    public string Name { get; set; }
+    public string CountryRegionCode { get; set; }
+    public string Group { get; set; }
+    public decimal SalesYTD { get; set; }
+    public decimal SalesLastYear { get; set; }
+    public decimal CostYTD { get; set; }
+    public decimal CostLastYear { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual CountryRegion CountryRegion { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<StateProvince> StateProvinces { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<Customer> Customers { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesPerson> SalesPersons { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesTerritoryHistory> SalesTerritoryHistories { get; set; }
+}
+
+public partial class SalesTerritoryHistory
+{
+    public int BusinessEntityID { get; set; }
+    public int TerritoryID { get; set; }
+    public System.DateTime StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual SalesPerson SalesPerson { get; set; }
+    public virtual SalesTerritory SalesTerritory { get; set; }
+}
+
+public partial class ShoppingCartItem
+{
+    public int ShoppingCartItemID { get; set; }
+    public string ShoppingCartID { get; set; }
+    public int Quantity { get; set; }
+    public int ProductID { get; set; }
+    public System.DateTime DateCreated { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+}
+
+public partial class SpecialOffer
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public SpecialOffer()
+    {
+        this.SpecialOfferProducts = new HashSet<SpecialOfferProduct>();
+    }
+
+    public int SpecialOfferID { get; set; }
+    public string Description { get; set; }
+    public decimal DiscountPct { get; set; }
+    public string Type { get; set; }
+    public string Category { get; set; }
+    public System.DateTime StartDate { get; set; }
+    public System.DateTime EndDate { get; set; }
+    public int MinQty { get; set; }
+    public Nullable<int> MaxQty { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SpecialOfferProduct> SpecialOfferProducts { get; set; }
+}
+
+public partial class SpecialOfferProduct
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public SpecialOfferProduct()
+    {
+        this.SalesOrderDetails = new HashSet<SalesOrderDetail>();
+    }
+
+    public int SpecialOfferID { get; set; }
+    public int ProductID { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesOrderDetail> SalesOrderDetails { get; set; }
+    public virtual SpecialOffer SpecialOffer { get; set; }
+}
+
+public partial class StateProvince
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public StateProvince()
+    {
+        this.Addresses = new HashSet<Address>();
+        this.SalesTaxRates = new HashSet<SalesTaxRate>();
+    }
+
+    public int StateProvinceID { get; set; }
+    public string StateProvinceCode { get; set; }
+    public string CountryRegionCode { get; set; }
+    public bool IsOnlyStateProvinceFlag { get; set; }
+    public string Name { get; set; }
+    public int TerritoryID { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<Address> Addresses { get; set; }
+    public virtual CountryRegion CountryRegion { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SalesTaxRate> SalesTaxRates { get; set; }
+    public virtual SalesTerritory SalesTerritory { get; set; }
+}
+
+public partial class Store
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Store()
+    {
+        this.Customers = new HashSet<Customer>();
+    }
+
+    public int BusinessEntityID { get; set; }
+    public string Name { get; set; }
+    public Nullable<int> SalesPersonID { get; set; }
+    public string Demographics { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+
+    public virtual BusinessEntity BusinessEntity { get; set; }
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<Customer> Customers { get; set; }
+    public virtual SalesPerson SalesPerson { get; set; }
+}
+
+public partial class vAdditionalContactInfo
+{
+    public int BusinessEntityID { get; set; }
+    public string FirstName { get; set; }
+    public string MiddleName { get; set; }
+    public string LastName { get; set; }
+    public string TelephoneNumber { get; set; }
+    public string TelephoneSpecialInstructions { get; set; }
+    public string Street { get; set; }
+    public string City { get; set; }
+    public string StateProvince { get; set; }
+    public string PostalCode { get; set; }
+    public string CountryRegion { get; set; }
+    public string HomeAddressSpecialInstructions { get; set; }
+    public string EMailAddress { get; set; }
+    public string EMailSpecialInstructions { get; set; }
+    public string EMailTelephoneNumber { get; set; }
+    public System.Guid rowguid { get; set; }
+    public System.DateTime ModifiedDate { get; set; }
+}
+
+public partial class vIndividualCustomer
+{
+    public int BusinessEntityID { get; set; }
+    public string Title { get; set; }
+    public string FirstName { get; set; }
+    public string MiddleName { get; set; }
+    public string LastName { get; set; }
+    public string Suffix { get; set; }
+    public string PhoneNumber { get; set; }
+    public string PhoneNumberType { get; set; }
+    public string EmailAddress { get; set; }
+    public int EmailPromotion { get; set; }
+    public string AddressType { get; set; }
+    public string AddressLine1 { get; set; }
+    public string AddressLine2 { get; set; }
+    public string City { get; set; }
+    public string StateProvinceName { get; set; }
+    public string PostalCode { get; set; }
+    public string CountryRegionName { get; set; }
+    public string Demographics { get; set; }
+}
+
+public partial class vPersonDemographic
+{
+    public int BusinessEntityID { get; set; }
+    public Nullable<decimal> TotalPurchaseYTD { get; set; }
+    public Nullable<System.DateTime> DateFirstPurchase { get; set; }
+    public Nullable<System.DateTime> BirthDate { get; set; }
+    public string MaritalStatus { get; set; }
+    public string YearlyIncome { get; set; }
+    public string Gender { get; set; }
+    public Nullable<int> TotalChildren { get; set; }
+    public Nullable<int> NumberChildrenAtHome { get; set; }
+    public string Education { get; set; }
+    public string Occupation { get; set; }
+    public Nullable<bool> HomeOwnerFlag { get; set; }
+    public Nullable<int> NumberCarsOwned { get; set; }
+}
+
+public partial class vSalesPerson
+{
+    public int BusinessEntityID { get; set; }
+    public string Title { get; set; }
+    public string FirstName { get; set; }
+    public string MiddleName { get; set; }
+    public string LastName { get; set; }
+    public string Suffix { get; set; }
+    public string JobTitle { get; set; }
+    public string PhoneNumber { get; set; }
+    public string PhoneNumberType { get; set; }
+    public string EmailAddress { get; set; }
+    public int EmailPromotion { get; set; }
+    public string AddressLine1 { get; set; }
+    public string AddressLine2 { get; set; }
+    public string City { get; set; }
+    public string StateProvinceName { get; set; }
+    public string PostalCode { get; set; }
+    public string CountryRegionName { get; set; }
+    public string TerritoryName { get; set; }
+    public string TerritoryGroup { get; set; }
+    public Nullable<decimal> SalesQuota { get; set; }
+    public decimal SalesYTD { get; set; }
+    public decimal SalesLastYear { get; set; }
+}
+
+public partial class vSalesPersonSalesByFiscalYear
+{
+    public Nullable<int> SalesPersonID { get; set; }
+    public string FullName { get; set; }
+    public string JobTitle { get; set; }
+    public string SalesTerritory { get; set; }
+    public Nullable<decimal> C2002 { get; set; }
+    public Nullable<decimal> C2003 { get; set; }
+    public Nullable<decimal> C2004 { get; set; }
+}
+
+public partial class vStateProvinceCountryRegion
+{
+    public int StateProvinceID { get; set; }
+    public string StateProvinceCode { get; set; }
+    public bool IsOnlyStateProvinceFlag { get; set; }
+    public string StateProvinceName { get; set; }
+    public int TerritoryID { get; set; }
+    public string CountryRegionCode { get; set; }
+    public string CountryRegionName { get; set; }
+}
+
+public partial class vStoreWithAddress
+{
+    public int BusinessEntityID { get; set; }
+    public string Name { get; set; }
+    public string AddressType { get; set; }
+    public string AddressLine1 { get; set; }
+    public string AddressLine2 { get; set; }
+    public string City { get; set; }
+    public string StateProvinceName { get; set; }
+    public string PostalCode { get; set; }
+    public string CountryRegionName { get; set; }
+}
+
+public partial class vStoreWithContact
+{
+    public int BusinessEntityID { get; set; }
+    public string Name { get; set; }
+    public string ContactType { get; set; }
+    public string Title { get; set; }
+    public string FirstName { get; set; }
+    public string MiddleName { get; set; }
+    public string LastName { get; set; }
+    public string Suffix { get; set; }
+    public string PhoneNumber { get; set; }
+    public string PhoneNumberType { get; set; }
+    public string EmailAddress { get; set; }
+    public int EmailPromotion { get; set; }
+}
+
+public partial class vStoreWithDemographic
+{
+    public int BusinessEntityID { get; set; }
+    public string Name { get; set; }
+    public Nullable<decimal> AnnualSales { get; set; }
+    public Nullable<decimal> AnnualRevenue { get; set; }
+    public string BankName { get; set; }
+    public string BusinessType { get; set; }
+    public Nullable<int> YearOpened { get; set; }
+    public string Specialty { get; set; }
+    public Nullable<int> SquareFeet { get; set; }
+    public string Brands { get; set; }
+    public string Internet { get; set; }
+    public Nullable<int> NumberEmployees { get; set; }
+}
+
+public partial class ufnGetContactInformation_Result
+{
+    public int PersonID { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string JobTitle { get; set; }
+    public string BusinessEntityType { get; set; }
+}
+
+public partial class uspGetBillOfMaterials_Result
+{
+    public Nullable<int> ProductAssemblyID { get; set; }
+    public Nullable<int> ComponentID { get; set; }
+    public string ComponentDesc { get; set; }
+    public Nullable<decimal> TotalQuantity { get; set; }
+    public Nullable<decimal> StandardCost { get; set; }
+    public Nullable<decimal> ListPrice { get; set; }
+    public Nullable<short> BOMLevel { get; set; }
+    public Nullable<int> RecursionLevel { get; set; }
+}
+
+public partial class uspGetEmployeeManagers_Result
+{
+    public Nullable<int> RecursionLevel { get; set; }
+    public Nullable<int> BusinessEntityID { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string OrganizationNode { get; set; }
+    public string ManagerFirstName { get; set; }
+    public string ManagerLastName { get; set; }
+}
+
+public partial class uspGetManagerEmployees_Result
+{
+    public Nullable<int> RecursionLevel { get; set; }
+    public string OrganizationNode { get; set; }
+    public string ManagerFirstName { get; set; }
+    public string ManagerLastName { get; set; }
+    public Nullable<int> BusinessEntityID { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+}
+
+public partial class uspGetWhereUsedProductID_Result
+{
+    public Nullable<int> ProductAssemblyID { get; set; }
+    public Nullable<int> ComponentID { get; set; }
+    public string ComponentDesc { get; set; }
+    public Nullable<decimal> TotalQuantity { get; set; }
+    public Nullable<decimal> StandardCost { get; set; }
+    public Nullable<decimal> ListPrice { get; set; }
+    public Nullable<short> BOMLevel { get; set; }
+    public Nullable<int> RecursionLevel { get; set; }
+}

@@ -203,6 +203,8 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="EmployeeSecurity.cs" />
+    <Compile Include="ErrorClass.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,6 +220,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Style.css" />
+    <Content Include="ErrorLogFile\AdventureError.txt" />
+    <Content Include="ErrorLogFile\ErrorLogger.txt" />
+    <Content Include="ErrorLogFile\OtherErrors.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -276,10 +281,6 @@
     <ProjectReference Include="..\EmployeeDataAccess\EmployeeDataAccess.csproj">
       <Project>{c53d3449-af14-427e-851e-4c719ab30359}</Project>
       <Name>EmployeeDataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EmployeeWEBAPIDEMO\EmployeeWEBAPIDEMO.csproj">
-      <Project>{91253c8e-7eaf-4aa6-adb9-b97e760a0b56}</Project>
-      <Name>EmployeeWEBAPIDEMO</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

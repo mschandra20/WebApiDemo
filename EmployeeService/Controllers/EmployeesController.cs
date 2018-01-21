@@ -1,7 +1,4 @@
-﻿using EmployeeDataAccess;
-using EmployeeWEBAPIDEMO.Attributes;
-using EmployeeWEBAPIDEMO.Controllers;
-using System;
+﻿using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -11,7 +8,7 @@ using System.Web.Http;
 namespace EmployeeService.Controllers
 {
     // [RequireHttps]
-    [BasicAuthentication]
+    //[BasicAuthentication]
     [Authorize]
     public class EmployeesController : ApiController
     {

@@ -20,6 +20,10 @@
             $('#linkClose').click(function () {
                 $('#divError').hide('fade');
             });
+            $('#txtEmail').click(function () {
+                $('#divError').hide('fade');
+            });
+
             $('#btnRegister').click(function () {
                 $.ajax({
                     url:'/api/account/register',
@@ -33,7 +37,7 @@
                         $('#successModal').modal('show');
                     },
                     error: function (jqXHR) {
-                        $('#divErrorText').text(jqXHR.statusText);
+                        $('#divErrorText').text(jqXHR.statusText +"   "+ jqXHR.responseText);
                         $('#divError').show('fade');
                     }
                 });

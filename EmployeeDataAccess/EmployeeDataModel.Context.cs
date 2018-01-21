@@ -7,25 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EmployeeDataAccess
+using System;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+
+public partial class EmployeeDBEntities : DbContext
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
-    
-    public partial class EmployeeDBEntities : DbContext
+    public EmployeeDBEntities()
+        : base("name=EmployeeDBEntities")
     {
-        public EmployeeDBEntities()
-            : base("name=EmployeeDBEntities")
-        {
-        }
-    
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
-    
-        public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<User> Users { get; set; }
     }
+
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
+        throw new UnintentionalCodeFirstException();
+    }
+
+    public virtual DbSet<Employee> Employees { get; set; }
+    public virtual DbSet<User> Users { get; set; }
 }
