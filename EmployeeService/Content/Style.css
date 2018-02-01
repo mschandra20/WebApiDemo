@@ -1,9 +1,15 @@
 ﻿body {
     box-sizing:border-box;
 }
+h2 {
+color:white;
+padding-right:2em;
+padding-left:1em;
+
+}
 .Eheader{
     margin-top:0;
-    background-color:lightseagreen;
+    background-color:#145c59;
     
 
 }
@@ -15,8 +21,9 @@
 }
 
 .Efooter {
+    color:white;
     margin-bottom: 0;
-    background-color: lightseagreen;
+    background-color: #145c59;
 }
 
 .btn {

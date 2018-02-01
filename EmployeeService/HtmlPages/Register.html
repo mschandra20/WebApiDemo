@@ -22,11 +22,12 @@
             });
             $('#txtEmail').click(function () {
                 $('#divError').hide('fade');
+                
             });
 
             $('#btnRegister').click(function () {
                 $.ajax({
-                    url:'/api/account/register',
+                    url:'/api/account/login',
                     method: 'POST',
                     data: {
                         email: $('#txtEmail').val(),
@@ -51,12 +52,16 @@
     </script>
 
     <section class="page-header   navbar navbar-fixed-top Eheader">
-        <h2>Employee Management Portal</h2>
+        <h2>Employee Management Portal <a class="btn pull-right" href="Login.html">Login</a></h2>
+       
+        
     </section>
     <section class="body-content  col-lg-6 col-md-offset-3 EContent">
         <table class="table">
             <tr colspan="2">
-                <td><h3>Register Form</h3></td>
+                <th>
+                    <h3>Register New User</h3>
+                </th>
             </tr>
             <tr>
                 <td class="col-lg-6">

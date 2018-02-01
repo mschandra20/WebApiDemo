@@ -8,21 +8,64 @@
     <link href="../Content/Style.css" rel="stylesheet" />
 </head>
 <body>
+    <script type="text/javascript">
+         $(document).ready(function () {
+
+             $('#linkClose').click(function () {
+                 $('#divError').hide('fade');
+             });
+             $('#txtUsername').click(function () {
+                 $('#divError').hide('fade');
+               
+             });
+
+             $('#btnLogin').click(function () {
+                 $.ajax({
+                     url: '/token',
+                     method: 'POST',
+                     contentType: 'application/json',
+                     data: {
+                         username: $('#txtUsername').val(),
+                         Password: $('#txtPassword').val(),
+                         grant_type: 'password'
+                     },
+                     success: function () {
+                         $('#successModal').modal('show');
+                     },
+                     error: function (jqXHR) {
+                         $('#divErrorText').text(jqXHR.statusText + "   " + jqXHR.responseText);
+                         $('#divError').show('fade');
+                     }
+                 });
+
+
+
+             });//End btnRegister click
+
+         });//end ready()
+
+    </script>
+
+
+
+
     <section class="page-header   navbar navbar-fixed-top Eheader">
-        <h2>Employee Management Portal</h2>
+        <h2>Employee Management Portal <a class="btn pull-right" href="Register.html">Register</a> </h2>
     </section>
     <section class="body-content  col-lg-6 col-md-offset-3 EContent">
         <table class="table">
             <tr colspan="2">
-                <td><h3>Login Form</h3></td>
+                <th>
+                <h3>Login Existing User</h3>
+                </th>
             </tr>
             <tr>
-                <td class="col-lg-6">Email</td>
-                <td class="col-lg-6"><input class="form-control" type="text" placeholder="john.right@left.com" id="txtEmail" /></td>
+                <td class="col-lg-6">Username</td>
+                <td class="col-lg-6"><input id="txtUsername" class="form-control" type="text" placeholder="john.right@left.com"  /></td>
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input class="form-control" type="password" placeholder="Password" id="txtPassword" /></td>
+                <td><input id="txtPassword" class="form-control" type="password" placeholder="Password"  /></td>
             </tr>
             <tr colspan="2">
                 <td>
@@ -33,7 +76,9 @@
 
     </section>
     <section class="panel-footer navbar navbar-fixed-bottom Efooter">
-        2017 &copy; All rights Reserved
+        <script>Date.now</script>
+        <p id="dateFooter"></p> &copy;
+        <script>document.write(new Date().getFullYear()); </script> All rights Reserved
     </section>
 </body>
 </html>
