@@ -29,8 +29,9 @@
                          Password: $('#txtPassword').val(),
                          grant_type: 'password'
                      },
-                     success: function () {
-                         $('#successModal').modal('show');
+                     success: function (response) {
+                         $('#divErrorText').text(JSON.stringify(response));
+                         $('#divError').show('fade');
                      },
                      error: function (jqXHR) {
                          $('#divErrorText').text(jqXHR.statusText + "   " + jqXHR.responseText);
@@ -56,16 +57,16 @@
         <table class="table">
             <tr colspan="2">
                 <th>
-                <h3>Login Existing User</h3>
+                    <h3>Login Existing User</h3>
                 </th>
             </tr>
             <tr>
                 <td class="col-lg-6">Username</td>
-                <td class="col-lg-6"><input id="txtUsername" class="form-control" type="text" placeholder="john.right@left.com"  /></td>
+                <td class="col-lg-6"><input id="txtUsername" class="form-control" type="text" placeholder="john.right@left.com" /></td>
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input id="txtPassword" class="form-control" type="password" placeholder="Password"  /></td>
+                <td><input id="txtPassword" class="form-control" type="password" placeholder="Password" /></td>
             </tr>
             <tr colspan="2">
                 <td>
@@ -73,6 +74,12 @@
                 </td>
             </tr>
         </table>
+        <div id="divError" class="alert alert-danger collapse">
+            <a id="linkClose" class="close" href="#">&times;</a>
+            <div id="divErrorText"></div>
+        </div>
+
+
 
     </section>
     <section class="panel-footer navbar navbar-fixed-bottom Efooter">

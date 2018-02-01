@@ -27,7 +27,7 @@
 
             $('#btnRegister').click(function () {
                 $.ajax({
-                    url:'/api/account/login',
+                    url:'/api/account/register',
                     method: 'POST',
                     data: {
                         email: $('#txtEmail').val(),
@@ -95,7 +95,7 @@
                         </button>
                         <h4>Success</h4>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" style="color:black">
                         <h2>Registration Successful</h2>
                     </div>
                     <div class="modal-footer">
