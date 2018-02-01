@@ -586,3 +586,31 @@ Date: 1/10/2018 22:26:31
 Source: WebApiContrib.Formatting.Jsonp
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: No connection string named 'EmployeeDBEntities' could be found in the application config file.
+StackTrace:    at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 28
+Date: 2/1/2018 16:13:03
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: No connection string named 'EmployeeDBEntities' could be found in the application config file.
+StackTrace:    at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 28
+Date: 2/1/2018 16:43:54
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

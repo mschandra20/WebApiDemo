@@ -10,6 +10,7 @@
 <body>
     <script type="text/javascript">
          $(document).ready(function () {
+          
 
              $('#linkClose').click(function () {
                  $('#divError').hide('fade');
@@ -18,6 +19,8 @@
                  $('#divError').hide('fade');
                
              });
+
+            
 
              $('#btnLogin').click(function () {
                  $.ajax({
@@ -30,8 +33,9 @@
                          grant_type: 'password'
                      },
                      success: function (response) {
-                         $('#divErrorText').text(JSON.stringify(response));
-                         $('#divError').show('fade');
+                         sessionStorage.setItem('accessToken', response.access_token);
+                         window.location.href = 'Data.html';
+                        
                      },
                      error: function (jqXHR) {
                          $('#divErrorText').text(jqXHR.statusText + "   " + jqXHR.responseText);

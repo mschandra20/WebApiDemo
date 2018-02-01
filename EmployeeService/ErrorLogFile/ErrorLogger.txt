@@ -586,3 +586,80 @@ Date: 1/10/2018 22:26:31
 Source: WebApiContrib.Formatting.Jsonp
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: The context is being used in Code First mode with code that was generated from an EDMX file for either Database First or Model First development.  This will not work correctly. To fix this problem do not remove the line of code that throws this exception. If you wish to use Database First or Model First, then make sure that the Entity Framework connection string is included in the app.config or web.config of the start-up project. If you are creating your own DbConnection, then make sure that it is an EntityConnection and not some other type of DbConnection, and that you pass it to one of the base DbContext constructors that take a DbConnection. To learn more about Code First, Database First, and Model First see the Entity Framework documentation here: http://go.microsoft.com/fwlink/?LinkId=394715
+StackTrace:    at EmployeeDBEntities.OnModelCreating(DbModelBuilder modelBuilder) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeDataAccess\EmployeeDataModel.Context.cs:line 23
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 28
+Date: 2/1/2018 17:01:29
+Source: EmployeeDataAccess
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'Employee'. Previously found CLR type 'Employee', newly found CLR type 'EmployeeDataAccess.Employee'.
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'User'. Previously found CLR type 'User', newly found CLR type 'EmployeeDataAccess.User'.
+StackTrace:    at System.Data.Entity.Core.Metadata.Edm.ObjectItemCollection.LoadAssemblyFromCache(Assembly assembly, Boolean loadReferencedAssemblies, EdmItemCollection edmItemCollection, Action`1 logLoadMessage)
+   at System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.ExplicitLoadFromAssembly(Assembly assembly, ObjectItemCollection collection, Action`1 logLoadMessage)
+   at System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.LoadFromAssembly(Assembly assembly, Action`1 logLoadMessage)
+   at System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.LoadFromAssembly(Assembly assembly)
+   at System.Data.Entity.Core.Metadata.Edm.MetadataOptimization.TryUpdateEntitySetMappingsForType(Type entityType)
+   at System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 28
+Date: 2/1/2018 17:06:58
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'Employee'. Previously found CLR type 'Employee', newly found CLR type 'EmployeeDataAccess.Employee'.
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'User'. Previously found CLR type 'User', newly found CLR type 'EmployeeDataAccess.User'.
+StackTrace:    at System.Data.Entity.Core.Metadata.Edm.ObjectItemCollection.LoadAssemblyFromCache(Assembly assembly, Boolean loadReferencedAssemblies, EdmItemCollection edmItemCollection, Action`1 logLoadMessage)
+   at System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.ExplicitLoadFromAssembly(Assembly assembly, ObjectItemCollection collection, Action`1 logLoadMessage)
+   at System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.LoadFromAssembly(Assembly assembly, Action`1 logLoadMessage)
+   at System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.LoadFromAssembly(Assembly assembly)
+   at System.Data.Entity.Core.Metadata.Edm.MetadataOptimization.TryUpdateEntitySetMappingsForType(Type entityType)
+   at System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 28
+Date: 2/1/2018 17:16:37
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'Employee'. Previously found CLR type 'Employee', newly found CLR type 'EmployeeDataAccess.Employee'.
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'User'. Previously found CLR type 'User', newly found CLR type 'EmployeeDataAccess.User'.
+StackTrace:    at System.Data.Entity.Core.Metadata.Edm.ObjectItemCollection.LoadAssemblyFromCache(Assembly assembly, Boolean loadReferencedAssemblies, EdmItemCollection edmItemCollection, Action`1 logLoadMessage)
+   at System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.ExplicitLoadFromAssembly(Assembly assembly, ObjectItemCollection collection, Action`1 logLoadMessage)
+   at System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.LoadFromAssembly(Assembly assembly, Action`1 logLoadMessage)
+   at System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.LoadFromAssembly(Assembly assembly)
+   at System.Data.Entity.Core.Metadata.Edm.MetadataOptimization.TryUpdateEntitySetMappingsForType(Type entityType)
+   at System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 28
+Date: 2/1/2018 17:31:58
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -220,14 +220,13 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Style.css" />
-    <Content Include="ErrorLogFile\AdventureError.txt" />
+    <Content Include="ErrorLogFile\AccountError.txt" />
     <Content Include="ErrorLogFile\ErrorLogger.txt" />
     <Content Include="ErrorLogFile\OtherErrors.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="HtmlPages\Data.html" />
-    <Content Include="HtmlPages\Employees.html" />
     <Content Include="HtmlPages\Login.html" />
     <Content Include="HtmlPages\Register.html" />
     <Content Include="Scripts\bootstrap.js" />

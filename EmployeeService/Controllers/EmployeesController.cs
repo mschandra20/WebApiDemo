@@ -18,14 +18,15 @@ namespace EmployeeService.Controllers
             try
             {
                 string username = Thread.CurrentPrincipal.Identity.Name;
+                string g = "ALL";
                 using (EmployeeDBEntities entities = new EmployeeDBEntities())
                 {
 
-                    switch (username.ToUpper())
+                    switch (g)
                     {
-                        //case "ALL":
-                        //    return Request.CreateResponse(HttpStatusCode.OK,
-                        //        entities.Employees.ToList());
+                        case "ALL":
+                            return Request.CreateResponse(HttpStatusCode.OK,
+                                entities.Employees.ToList());
                         case "MALE":
                             return Request.CreateResponse(HttpStatusCode.OK,
                                 entities.Employees.Where(e => e.Gender.ToUpper() == "MALE").ToList());

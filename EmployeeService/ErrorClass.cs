@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace EmployeeService.Controllers
+namespace EmployeeService
 {
     //static interface IError
     // {
@@ -17,11 +17,10 @@ namespace EmployeeService.Controllers
             string filename="OtherErrors";
             if (ex.StackTrace.Contains("EmployeesController"))
             filename = "ErrorLogger";
-            else if(ex.StackTrace.Contains("AdventureController"))
-            filename = "AdventureError";
+            else if(ex.StackTrace.Contains("AccountController"))
+            filename = "AccountError";
 
-            string path = @"C:\Users\SHARATHCHANDRA\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeWEBAPIDEMO\ErrorLogFile\"+filename+".txt";
-
+            string path = @"c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\ErrorLogFile\" + filename + ".txt";
 
             using (StreamWriter writer = new StreamWriter(path, true))
             {
