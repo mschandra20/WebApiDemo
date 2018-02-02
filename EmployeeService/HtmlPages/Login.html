@@ -10,7 +10,7 @@
 <body>
     <script type="text/javascript">
          $(document).ready(function () {
-          
+             $('#txtUsername').val('');
 
              $('#linkClose').click(function () {
                  $('#divError').hide('fade');
@@ -33,7 +33,9 @@
                          grant_type: 'password'
                      },
                      success: function (response) {
-                         sessionStorage.setItem('accessToken', response.access_token);
+                       //  $('#divErrorText').text(JSON.stringify(response));
+                         localStorage.setItem('accessToken', response.access_token);
+                         localStorage.setItem('userName', response.userName);
                          window.location.href = 'Data.html';
                         
                      },

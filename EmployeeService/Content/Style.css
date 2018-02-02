@@ -7,6 +7,14 @@ padding-right:2em;
 padding-left:1em;
 
 }
+
+
+.spanUserName {
+    color: #145c59;
+    /*position:absolute;
+    right:5px;
+    top:50px;*/
+}
 .Eheader{
     margin-top:0;
     background-color:#145c59;
@@ -19,6 +27,7 @@ padding-left:1em;
     background-color: rgba(32, 178, 170, 0.35) ;
     border-radius:5px;
     margin-bottom:100px;
+    position:relative;
 }
 
 .Efooter {

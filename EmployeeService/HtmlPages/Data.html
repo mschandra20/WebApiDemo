@@ -10,9 +10,16 @@
 
         $(document).ready(function () {     //Here we are telling to do this anonymous function when the DOM is ready
 
-            if (sessionStorage.getItem('accessToken') == null) {
+
+            if (localStorage.getItem('accessToken') == null) {
                 window.location.href = "Login.html";
             }
+            var uname = localStorage.getItem('userName');
+            var name = String.empty;
+            name = uname.split("@", 1);
+            
+               $('#spanUserName').text('Hello ' + name +' !'  );
+        //    document.getElementById("spanUserName").innerHTML = uname;
 
             $('#errorModal').on('hidden.bs.modal', function () {
                  window.location.href = "Login.html";
@@ -21,17 +28,23 @@
             //Get all employees button
             $('#btnGetAllEmployees').click(function () {  //Here we define click event with this id to perform
                 //this anonymous function when a click happens
-                $('#tblData').removeClass('hidden');
+
+                
+
+               // $('#tblData').show('fade');
 
                 $.ajax({                    //Here we are making the AJAX request and it needs some parameters
                     type: 'GET',
                     url: "/api/employees",
                     dataType: 'json',
                     headers: {
-                        'Authorization': 'Bearer ' + sessionStorage.getItem('accessToken')
+                        'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
                     },
                     success: function (data) { //On succesful execution of ajax we call this anonymous function
-                        
+
+                        $('#tblData').removeClass('hidden').show('fade');
+                      $('#tblBody').empty();
+
                        $.each(data, function (index, val) { // here we can define a function or can call any other function
                             //@param collection The object or array to iterate over. here it is DATA
                             //* @param callback The function that will be executed on every object.Will break the loop by returning false.
@@ -62,7 +75,7 @@
             });//End of #btnGetAllEmployees click function
 
             $('#btnLogOff').click(function () {
-                sessionStorage.removeItem('accessToken');
+                localStorage.removeItem('accessToken');
                 window.location.href = 'Login.html';
             });
            
@@ -81,15 +94,19 @@
         <h2 style="padding-left:10px;" class="col-md-10" >
             Employee Management Portal
         </h2>
+        
         <input class="btn navbar-right col-md-1 btnCustom" style=" margin-top:10px;" type="button" id="btnLogOff" value="Log off" />
     </section>
 
     <section class="body-content col-md-8 col-md-offset-2 EContent">
         <div style="padding-top:30px; padding-left:20px">
-            <input class="btn navbar-left btnCustom" type="button" id="btnGetAllEmployees" value="Get Employees" />
+            <input class="btn navbar-left btnCustom" 
+                   type="button" 
+                   id="btnGetAllEmployees" 
+                   value="Get Employees" /><h4><span id="spanUserName" class="spanUserName col-md-3 navbar-right"></span></h4>
             <br />
             <br />
-            <h3>Employees Data</h3>
+            <h3>Employees Data </h3>
             <!--<h4> <ul style="list-style:circle" id="empList" /></h4>-->
         </div>
         <div class="well hidden" id="tblData">
