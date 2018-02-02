@@ -125,20 +125,15 @@
     <Compile Include="Employee.cs">
       <DependentUpon>EmployeeDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeDataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeDataModel.Context.tt</DependentUpon>
-    </Compile>
     <Compile Include="EmployeeDataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeDataModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="EmployeeDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeDataModel.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="ErrorLog.cs">
       <DependentUpon>AdventureWorks.tt</DependentUpon>
@@ -248,12 +243,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="EmployeeDataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EmployeeDataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <EntityDeploy Include="AdventureWorks.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>AdventureWorks.Designer.cs</LastGenOutput>
@@ -262,9 +251,10 @@
       <DependentUpon>AdventureWorks.edmx</DependentUpon>
     </None>
     <None Include="App.Config" />
-    <None Include="EmployeeDataModel.edmx.diagram">
-      <DependentUpon>EmployeeDataModel.edmx</DependentUpon>
-    </None>
+    <EntityDeploy Include="EmployeeDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EmployeeDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -278,14 +268,9 @@
       <DependentUpon>AdventureWorks.edmx</DependentUpon>
       <LastGenOutput>AdventureWorks.cs</LastGenOutput>
     </Content>
-    <Content Include="EmployeeDataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EmployeeDataModel.Context.cs</LastGenOutput>
-      <DependentUpon>EmployeeDataModel.edmx</DependentUpon>
-    </Content>
     <Content Include="EmployeeDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EmployeeDataModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EmployeeDataModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>

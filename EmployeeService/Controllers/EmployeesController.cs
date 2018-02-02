@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using DataAccessLayer;
+using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -17,6 +19,7 @@ namespace EmployeeService.Controllers
         {
             try
             {
+                
                 string username = Thread.CurrentPrincipal.Identity.Name;
                 string g = "ALL";
                 using (EmployeeDBEntities entities = new EmployeeDBEntities())
