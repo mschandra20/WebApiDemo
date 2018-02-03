@@ -35,8 +35,9 @@
 
                 $.ajax({                    //Here we are making the AJAX request and it needs some parameters
                     type: 'GET',
-                    url: "http://localhost:64753/api/employees",
+                    url: "http://localhost:64753/api/employees?callback=?",
                     dataType: 'jsonp',
+                    //jsonpCallback: "localJsonpCallback",
                     headers: {
                         'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
                     },

@@ -33,7 +33,7 @@ namespace EmployeeService
              //   new CamelCasePropertyNamesContractResolver();
 
             // config.Formatters.Remove(config.Formatters.XmlFormatter);
-
+            
           //  var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
            // config.Formatters.Insert(0,jsonpFormatter);//At zero index we are inserting the above object
 

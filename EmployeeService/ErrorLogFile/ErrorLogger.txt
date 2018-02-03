@@ -683,3 +683,234 @@ Date: 2/2/2018 10:31:04
 Source: EntityFramework
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 22:12:07
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 22:12:28
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 22:13:33
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 22:34:44
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 22:41:42
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 22:41:43
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 22:41:43
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 22:41:43
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 22:42:01
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 22:42:01
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 22:42:01
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 22:42:30
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 22:59:38
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 23:01:02
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 23:01:03
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 23:01:03
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 23:01:10
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 23:01:10
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 23:01:10
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 23:01:10
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: A callback parameter was not provided in the request URI.
+StackTrace:    at WebApiContrib.Formatting.Jsonp.JsonpMediaTypeFormatter.GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType) in C:\Users\ryan\Code\WebApiContrib.Formatting.Jsonp\src\WebApiContrib.Formatting.Jsonp\JsonpMediaTypeFormatter.cs:line 107
+   at System.Net.Http.Formatting.DefaultContentNegotiator.Negotiate(Type type, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Web.Http.Results.NegotiatedContentResult`1.Execute(HttpStatusCode statusCode, T content, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable`1 formatters)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value, HttpConfiguration configuration)
+   at System.Net.Http.HttpRequestMessageExtensions.CreateResponse[T](HttpRequestMessage request, HttpStatusCode statusCode, T value)
+   at EmployeeService.Controllers.EmployeesController.Get() in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 31
+Date: 2/2/2018 23:01:10
+Source: WebApiContrib.Formatting.Jsonp
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
