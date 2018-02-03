@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JSONP</title>
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <script type="text/javascript">
+         $(document).ready(function () {
+             $('#txtUsername').val('');
+
+             $('#linkClose').click(function () {
+                 $('#divError').hide('fade');
+             });
+             $('#txtUsername').click(function () {
+                 $('#divError').hide('fade');
+               
+             });
+
+            
+
+             $('#btnLogin').click(function () {
+                 $.ajax({
+                     url: 'http://localhost:64753/token',
+                     method: 'POST',
+                     contentType: 'application/jsonp',
+                     data: {
+                         username: $('#txtUsername').val(),
+                         Password: $('#txtPassword').val(),
+                         grant_type: 'password'
+                     },
+                     success: function (response) {
+                       //  $('#divErrorText').text(JSON.stringify(response));
+                         localStorage.setItem('accessToken', response.access_token);
+                         localStorage.setItem('userName', response.userName);
+                         window.location.href = 'Data.html';
+                        
+                     },
+                     error: function (jqXHR) {
+                         $('#divErrorText').text(jqXHR.statusText + "   " + jqXHR.responseText);
+                         $('#divError').show('fade');
+                     }
+                 });
+
+
+
+             });//End btnRegister click
+
+         });//end ready()
+
+    </script>
+
+
+
+
+    <section class="page-header   navbar navbar-fixed-top Eheader">
+        <h2>Employee Management Portal <a class="btn pull-right" href="Register.html">Register</a> </h2>
+    </section>
+    <section class="body-content  col-lg-6 col-md-offset-3 EContent">
+        <table class="table">
+            <tr colspan="2">
+                <th>
+                    <h3>Login Existing User</h3>
+                </th>
+            </tr>
+            <tr>
+                <td class="col-lg-6">Username</td>
+                <td class="col-lg-6"><input id="txtUsername" class="form-control" type="text" placeholder="john.right@left.com" /></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input id="txtPassword" class="form-control" type="password" placeholder="Password" /></td>
+            </tr>
+            <tr colspan="2">
+                <td>
+                    <input class="btn" type="button" value="Login" id="btnLogin" />
+                </td>
+            </tr>
+        </table>
+        <div id="divError" class="alert alert-danger collapse">
+            <a id="linkClose" class="close" href="#">&times;</a>
+            <div id="divErrorText"></div>
+        </div>
+
+
+
+    </section>
+    <section class="panel-footer navbar navbar-fixed-bottom Efooter">
+        <script>Date.now</script>
+        <p id="dateFooter"></p> &copy;
+        <script>document.write(new Date().getFullYear()); </script> All rights Reserved
+    </section>
+</body>
+</html>

@@ -35,7 +35,7 @@
 
                 $.ajax({                    //Here we are making the AJAX request and it needs some parameters
                     type: 'GET',
-                    url: "http://localhost:64753/api/employees",
+                    url: "/api/employees",
                     dataType: 'json',
                     headers: {
                         'Authorization': 'Bearer ' + localStorage.getItem('accessToken')

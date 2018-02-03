@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+﻿using Microsoft.Owin.Security.OAuth;
 using System.Web.Http;
-using Microsoft.Owin.Security.OAuth;
-using Newtonsoft.Json.Serialization;
 
 namespace EmployeeService
 {
@@ -25,6 +20,28 @@ namespace EmployeeService
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings
+           .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            GlobalConfiguration.Configuration.Formatters
+                .Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
+
+            config.Formatters.JsonFormatter.SerializerSettings.Formatting =
+                Newtonsoft.Json.Formatting.Indented;
+
+           // config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = 
+             //   new CamelCasePropertyNamesContractResolver();
+
+            // config.Formatters.Remove(config.Formatters.XmlFormatter);
+
+          //  var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
+           // config.Formatters.Insert(0,jsonpFormatter);//At zero index we are inserting the above object
+
+            //EnableCorsAttribute cors = new EnableCorsAttribute("*", "*", "*");
+            //config.EnableCors(cors);
+
+            // config.Filters.Add(new RequireHttpsAttribute());
+          //  config.Filters.Add(new BasicAuthenticationAttribute());
         }
     }
 }

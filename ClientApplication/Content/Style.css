@@ -1,0 +1,62 @@
+﻿body {
+    box-sizing:border-box;
+}
+h2 {
+color:white;
+padding-right:2em;
+padding-left:1em;
+
+}
+
+
+.spanUserName {
+    color: #195c14;
+    /*position:absolute;
+    right:5px;
+    top:50px;*/
+}
+.Eheader{
+    margin-top:0;
+    background-color:#195c14;
+    
+
+}
+
+.EContent {
+    margin-top:100px;
+    background-color: rgba(32, 178, 44, 0.35) ;
+    border-radius:5px;
+    margin-bottom:100px;
+    position:relative;
+}
+
+.Efooter {
+    color:white;
+    margin-bottom: 0;
+    background-color: #195c14;
+}
+
+.btn {
+    color:#ffffff;
+    background-color:#20b24b;
+    transition-duration:0.3s;
+}
+
+btn:hover {
+    
+    transition-duration: 0.3s;
+}
+
+.btnCustom {
+    background-color: #195c14;
+    border-color: rgba(32, 178, 44, 0.35);
+    margin-right: 10px;
+    transition-duration: 0.3s;
+}
+    .btnCustom:hover {
+        background-color: #0a3e1e;
+        border-color: #0a3e28;
+        color:white;
+       
+        transition-duration: 0.3s;
+    }
