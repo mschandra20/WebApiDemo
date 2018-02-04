@@ -229,6 +229,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="HtmlPages\AddEmp.html" />
     <Content Include="HtmlPages\Data.html" />
     <Content Include="HtmlPages\Login.html" />
     <Content Include="HtmlPages\Register.html" />

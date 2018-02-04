@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="page-header   navbar navbar-fixed-top Eheader">
+        <h2>Employee Management Portal <a class="btn pull-right" href="Login.html" id="btnLogOff">Log Off</a></h2>
+    </section>
+
+    <section class="body-content  col-lg-6 col-md-offset-3 EContent">
+        <table class="table">
+            <tr colspan="2">
+                <th>
+                    <h3>Add New Employee</h3>
+                </th>
+            </tr>
+            <tr>
+                <td class="col-lg-6">
+                    First Name
+                </td>
+                <td class="col-lg-6">
+                    <input id="txtFirstName" class="form-control" type="text" placeholder="John" />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-lg-6">
+                    Last Name
+                </td>
+                <td class="col-lg-6">
+                    <input id="txtLastName" class="form-control" type="text" placeholder="Right" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Salary</td>
+                <td><input id="txtSalary" class="form-control" type="text" placeholder="50000" /></td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td><input id="txtGender" class="form-control" type="text" placeholder="Male or Female" /></td>
+            </tr>
+
+            <tr colspan="2">
+                <td>
+                    <input id="btnSubmit" class="btn" type="button" value="Submit" />
+                </td>
+            </tr>
+
+        </table>
+        <div class="modal fade" tabindex="-1" id="successModal"
+             data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Success</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <h2 style="color:black">Registration Successful</h2>
+                    </div>
+                    <div class="modal-footer">
+                        <!--data-dismiss="modal"-->
+                        <a class="btn btn-success btnCustom" href="Login.html">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divError" class="alert alert-danger collapse">
+            <a id="linkClose" class="close" href="#">&times;</a>
+            <div id="divErrorText"></div>
+        </div>
+    </section>
+    <section class="panel-footer navbar navbar-fixed-bottom Efooter">
+        <script>Date.now</script>
+        <p id="dateFooter"></p> &copy;
+        <script>document.write(new Date().getFullYear()); </script> All rights Reserved
+    </section>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            if (localStorage.getItem('accessToken') == null) {
+                window.location.href = "Login.html";
+            }
+            $('#txtFirstName').val('');
+            $('#txtLastName').val('');
+            $('#txtSalary').val('');
+            $('#txtGender').val('');
+
+            $('#linkClose').click(function () {
+                $('#divError').hide('fade');
+            });
+            $('#txtUsername').click(function () {
+                $('#divError').hide('fade');
+
+            });
+
+
+            $('#btnSubmit').click(function () {
+                $.ajax({
+                    url: '/api/employees',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    headers: {
+                        'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
+                    },
+                    
+                    data: {
+                        firstName: $('#txtFirstName').val(),
+                        lastName: $('#txtLastName').val(),
+                        salary: $('#txtSalary').val(),
+                        gender: $('#txtGender').val(),
+                       // grant_type: 'password'
+                    },
+                    success: function (response) {
+                        //  $('#divErrorText').text(JSON.stringify(response));
+                        window.location.href = 'Data.html';
+
+                    },
+                    error: function (jqXHR) {
+                        $('#divErrorText').text(jqXHR.statusText + "   " + jqXHR.responseText);
+                        $('#divError').show('fade');
+                    }
+                });
+            });//End btnRegister click
+
+            $('#btnLogOff').click(function () {
+                localStorage.removeItem('accessToken');
+                window.location.href = 'Login.html';
+            });
+        });//end ready()
+
+    </script>
+</body>
+</html>
+

@@ -914,3 +914,21 @@ Date: 2/2/2018 23:01:10
 Source: WebApiContrib.Formatting.Jsonp
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 86
+Date: 2/4/2018 16:33:56
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 86
+Date: 2/4/2018 16:54:55
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
