@@ -11,15 +11,15 @@ namespace EmployeeService.Controllers
 {
     // [RequireHttps]
     //[BasicAuthentication]
+    [Serializable]
     [Authorize]
     public class EmployeesController : ApiController
     {
-        
+
         public HttpResponseMessage Get()
         {
             try
             {
-                
                 string username = Thread.CurrentPrincipal.Identity.Name;
                 string g = "ALL";
                 using (EmployeeDBEntities entities = new EmployeeDBEntities())
@@ -50,7 +50,7 @@ namespace EmployeeService.Controllers
 
             }
         }
-        
+
         public HttpResponseMessage Get(int id)
         {
             try
@@ -61,7 +61,7 @@ namespace EmployeeService.Controllers
                     if (empObj != null)
                         return Request.CreateResponse(HttpStatusCode.OK, empObj);
                     else
-                        return Request.CreateResponse(HttpStatusCode.NotFound, 
+                        return Request.CreateResponse(HttpStatusCode.NotFound,
                             "The Employee with ID = " + id + " is NOT found");
 
                 }
@@ -77,33 +77,42 @@ namespace EmployeeService.Controllers
         // 204 No Content(Actually we dont want this reponse)
 
         //We need to set a CREATED response and send the object or record created to show whats added
+     
         public HttpResponseMessage Post([FromBody]Employee employee)
         {
-            try
+            if (employee != null)
             {
-                using (EmployeeDBEntities entities = new EmployeeDBEntities())
+                try
                 {
-                    entities.Employees.Add(employee);
-                    entities.SaveChanges();
+                    using (EmployeeDBEntities entities = new EmployeeDBEntities())
+                    {
+                        entities.Employees.Add(employee);
+                        entities.SaveChanges();
 
-                    var message = Request.CreateResponse(HttpStatusCode.Created, employee);
-                    //message.Headers.Location = new Uri(Request.RequestUri.AbsolutePath+employee.ID);
+                        var message = Request.CreateResponse(HttpStatusCode.Created, employee);
+                        //message.Headers.Location = new Uri(Request.RequestUri.AbsolutePath+employee.ID);
 
-                    return message;
+                        return message;
+                    }
+
                 }
 
+                //catch(Exception)
+                //We actually don't catch a general exception like 
+                //this(without using its object) do an operation for whatever the error may occur
+
+                catch (Exception ex)
+                {
+                    //var ErrorMessage = Request.CreateErrorResponse(HttpStatusCode.BadRequest,"THERE IS SOMETHING WRONG IN INPUT");
+                    var ErrorMessage = Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+                    ErrorClass.ErrorLogger(ex);
+
+                    return ErrorMessage;
+                }
             }
-            //catch(Exception)
-            //We actually don't catch a general exception like 
-            //this(without using its object) do an operation for whatever the error may occur
-
-            catch (Exception ex)
+            else
             {
-                //var ErrorMessage = Request.CreateErrorResponse(HttpStatusCode.BadRequest,"THERE IS SOMETHING WRONG IN INPUT");
-                var ErrorMessage = Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
-                ErrorClass.ErrorLogger(ex);
-
-                return ErrorMessage;
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Employee Object is null. The form submission is not done properly");
             }
         }
 
@@ -121,7 +130,8 @@ namespace EmployeeService.Controllers
                         return Request.CreateResponse(HttpStatusCode.OK, empObj);
                     }
                     else
-                        return Request.CreateResponse(HttpStatusCode.NotFound, "The Employee with ID = "+id + " is NOT found");
+                        return Request.CreateResponse(HttpStatusCode.NotFound,
+                            "The Employee with ID = "+id + " is NOT found");
 
                 }
             }

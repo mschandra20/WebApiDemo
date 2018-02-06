@@ -13,48 +13,50 @@
     </section>
 
     <section class="body-content  col-lg-6 col-md-offset-3 EContent">
-        <table class="table">
-            <tr colspan="2">
-                <th>
-                    <h3>Add New Employee</h3>
-                </th>
-            </tr>
-            <tr>
-                <td class="col-lg-6">
-                    First Name
-                </td>
-                <td class="col-lg-6">
-                    <input id="txtFirstName" class="form-control" type="text" placeholder="John" />
-                </td>
-            </tr>
+        <form id="formAddEmp">
+            <table class="table">
+                <tr colspan="2">
+                    <th>
+                        <h3>Add New Employee</h3>
+                    </th>
+                </tr>
 
-            <tr>
-                <td class="col-lg-6">
-                    Last Name
-                </td>
-                <td class="col-lg-6">
-                    <input id="txtLastName" class="form-control" type="text" placeholder="Right" />
-                </td>
-            </tr>
+                <tr>
+                    <td class="col-lg-6">
+                        First Name
+                    </td>
+                    <td class="col-lg-6">
+                        <input id="txtFirstName" class="form-control" type="text" placeholder="John" />
+                    </td>
+                </tr>
 
-            <tr>
-                <td>Salary</td>
-                <td><input id="txtSalary" class="form-control" type="text" placeholder="50000" /></td>
-            </tr>
+                <tr>
+                    <td class="col-lg-6">
+                        Last Name
+                    </td>
+                    <td class="col-lg-6">
+                        <input id="txtLastName" class="form-control" type="text" placeholder="Right" />
+                    </td>
+                </tr>
 
-            <tr>
-                <td>Gender</td>
-                <td><input id="txtGender" class="form-control" type="text" placeholder="Male or Female" /></td>
-            </tr>
+                <tr>
+                    <td>Salary</td>
+                    <td><input id="txtSalary" class="form-control" type="text" placeholder="50000" /></td>
+                </tr>
 
-            <tr colspan="2">
-                <td>
-                    <input id="btnSubmit" class="btn" type="button" value="Submit" />
-                </td>
-            </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td><input id="txtGender" class="form-control" type="text" placeholder="Male or Female" /></td>
+                </tr>
 
-        </table>
-        <div class="modal fade" tabindex="-1" id="successModal"
+                <tr colspan="2">
+                    <td>
+                        <input id="btnSubmit" class="btn" type="submit" value="Submit" />
+                    </td>
+                </tr>
+            </table>
+      </form>        
+      <!--  <div class="modal fade" tabindex="-1" id="successModal"
              data-keyboard="false" data-backdrop="static">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
@@ -66,12 +68,14 @@
                         <h2 style="color:black">Registration Successful</h2>
                     </div>
                     <div class="modal-footer">
-                        <!--data-dismiss="modal"-->
+                        <!--data-dismiss="modal"
                         <a class="btn btn-success btnCustom" href="Login.html">Close</a>
                     </div>
                 </div>
             </div>
         </div>
+        -->
+        
         <div id="divError" class="alert alert-danger collapse">
             <a id="linkClose" class="close" href="#">&times;</a>
             <div id="divErrorText"></div>
@@ -104,8 +108,12 @@
 
             });
 
+            var empObj= {firstName: $('#txtFirstName').val(),lastName: $('#txtLastName').val(),salary: $('#txtSalary').val(),gender: $('#txtGender').val(),};
+           // $('#btnSubmit').click(function () {
 
-            $('#btnSubmit').click(function () {
+                $('#formAddEmp').submit(function (event) {
+                    event.preventDefault(); // Prevent the form from submitting via the browser
+                    var form = $(this);
                 $.ajax({
                     url: '/api/employees',
                     method: 'POST',
@@ -113,14 +121,8 @@
                     headers: {
                         'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
                     },
-                    
-                    data: {
-                        firstName: $('#txtFirstName').val(),
-                        lastName: $('#txtLastName').val(),
-                        salary: $('#txtSalary').val(),
-                        gender: $('#txtGender').val(),
-                       // grant_type: 'password'
-                    },
+
+                    data: $('#formAddEmp').serialize(),
                     success: function (response) {
                         //  $('#divErrorText').text(JSON.stringify(response));
                         window.location.href = 'Data.html';

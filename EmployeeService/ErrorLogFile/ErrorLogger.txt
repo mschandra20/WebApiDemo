@@ -932,3 +932,291 @@ Date: 2/4/2018 16:54:55
 Source: EntityFramework
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 86
+Date: 2/4/2018 17:13:16
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 86
+Date: 2/4/2018 17:13:18
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 85
+Date: 2/5/2018 19:40:25
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 85
+Date: 2/5/2018 19:44:10
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 85
+Date: 2/5/2018 19:45:14
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 85
+Date: 2/5/2018 19:45:15
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 85
+Date: 2/5/2018 21:54:59
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 85
+Date: 2/5/2018 21:55:16
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 85
+Date: 2/5/2018 22:06:30
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 85
+Date: 2/5/2018 22:36:26
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 22:42:50
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 22:44:29
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:37
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:41
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:41
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:41
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:42
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:42
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:42
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:42
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:42
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:42
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:43
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:43
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:43
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:43
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:43
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:43
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:01:44
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:03:30
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:04:27
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: entity
+StackTrace:    at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at EmployeeService.Controllers.EmployeesController.Post(Employee employee) in c:\users\sharathchandra\documents\visual studio 2017\Projects\EmployeeWEBAPIDEMO\EmployeeService\Controllers\EmployeesController.cs:line 87
+Date: 2/5/2018 23:07:45
+Source: EntityFramework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
