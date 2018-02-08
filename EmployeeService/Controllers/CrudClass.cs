@@ -1,8 +1,6 @@
 ﻿using DataAccessLayer;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading;
 
 namespace EmployeeService.Controllers
@@ -13,66 +11,52 @@ namespace EmployeeService.Controllers
         {
             using (EmployeeDBEntities entities = new EmployeeDBEntities())
             {
-                var empObj = entities.Employees.FirstOrDefault(e => e.ID == id);
-                return empObj;
+                return IdExists(id,entities);
             }
         }
         public List<Employee> GetAllEmployees()
         {
             string username = Thread.CurrentPrincipal.Identity.Name;
-            string g = "ALL";
+           
             using (EmployeeDBEntities entities = new EmployeeDBEntities())
             {
-               
-                switch (g)
-                {
-                    case "ALL":
-                        return Request.CreateResponse(HttpStatusCode.OK,
-                            entities.Employees.ToList());
-                    case "MALE":
-                        return Request.CreateResponse(HttpStatusCode.OK,
-                            entities.Employees.Where(e => e.Gender.ToUpper() == "MALE").ToList());
-                    case "FEMALE":
-                        return Request.CreateResponse(HttpStatusCode.OK,
-                            entities.Employees.Where(e => e.Gender.ToUpper() == "FEMALE").ToList());
-                    default:
-                        return Request.CreateResponse(HttpStatusCode.BadRequest);
-                        //"The given gender value " + gender + " is not valid. It accepts only All, Male, Female");
-                }
-
+               return entities.Employees.ToList();
             }
+                  
         }
-        public HttpResponseMessage AddEmployee(Employee employee)
+
+        public Employee AddEmployee(Employee employee)
         {
             using (EmployeeDBEntities entities = new EmployeeDBEntities())
             {
                 entities.Employees.Add(employee);
                 entities.SaveChanges();
-
-                var message = Request.CreateResponse(HttpStatusCode.Created, employee);
-                //message.Headers.Location = new Uri(Request.RequestUri.AbsolutePath+employee.ID);
-
-                return message;
+               //message.Headers.Location = new Uri(Request.RequestUri.AbsolutePath+employee.ID);
+                return employee;
             }
         }
-        public HttpResponseMessage DeleteEmployee(int id, EmployeeDBEntities entities)
+
+
+        public Employee DeleteEmployee(int id, EmployeeDBEntities entities)
         {
-            var empObj = entities.Employees.FirstOrDefault(e => e.ID == id);
+            Employee empObj = IdExists(id, entities);
             if (empObj != null)
             {
                 entities.Employees.Remove(empObj);//The issue here is we need to save changes to the DB or it wont effect 
                 entities.SaveChanges();
-                return Request.CreateResponse(HttpStatusCode.OK, empObj);
+                return empObj;
             }
             else
-                return Request.CreateResponse(HttpStatusCode.NotFound,
-                    "The Employee with ID = " + id + " is NOT found");
+            {
+                return null;
+            }
         }
-        public HttpResponseMessage UpdateEmployee(int id, Employee employee)
+
+        public Employee UpdateEmployee(int id, Employee employee)
         {
             using (EmployeeDBEntities entities = new EmployeeDBEntities())
             {
-                var empObj = entities.Employees.FirstOrDefault(e => e.ID == id);
+                Employee empObj = IdExists(id, entities);
                 if (empObj != null)
                 {
                     empObj.FirstName = employee.FirstName;
@@ -81,13 +65,26 @@ namespace EmployeeService.Controllers
                     empObj.Salary = employee.Salary;
 
                     entities.SaveChanges();
+                    return empObj;
 
-                    return Request.CreateResponse(HttpStatusCode.OK, empObj);
                 }
                 else
-                    return Request.CreateResponse(HttpStatusCode.NotFound, "The Employee with ID = " + id + " is NOT found");
+                    return null;
 
             }
         }
+
+
+
+        public Employee IdExists(int id, EmployeeDBEntities entities)
+        {
+            return entities.Employees.FirstOrDefault(e => e.ID == id);
+            
+        }
+
+
+
     }
+
+
 }

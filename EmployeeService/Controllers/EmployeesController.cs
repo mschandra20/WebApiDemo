@@ -9,7 +9,7 @@ namespace EmployeeService.Controllers
 {
     // [RequireHttps]
     //[BasicAuthentication]
-    [Serializable]
+    //[Serializable]
     [Authorize]
     public class EmployeesController : ApiController
     {
@@ -33,10 +33,8 @@ namespace EmployeeService.Controllers
         {
             try
             {
-              
-                Employee empObj = cd.GetEmployeeWithId(id);
-                if (empObj != null)
-                    return Request.CreateResponse(HttpStatusCode.OK, empObj);
+                if (cd.GetEmployeeWithId(id) != null)
+                    return Request.CreateResponse(HttpStatusCode.OK, cd.GetEmployeeWithId(id));
                 else
                     return Request.CreateResponse(HttpStatusCode.NotFound,
                         "The Employee with ID = " + id + " is NOT found");
@@ -59,7 +57,7 @@ namespace EmployeeService.Controllers
             {
                 try
                 {
-                    return cd.AddEmployee(employee);
+                    return Request.CreateResponse(HttpStatusCode.Created, cd.AddEmployee(employee));
 
                 }
 
@@ -88,9 +86,17 @@ namespace EmployeeService.Controllers
             {
                 using (EmployeeDBEntities entities = new EmployeeDBEntities())
                 {
-                    return cd.DeleteEmployee(id, entities);
+                    Employee empObj = cd.DeleteEmployee(id, entities);
+                    if (empObj != null)
+                    {
+                        return Request.CreateResponse(HttpStatusCode.OK, empObj);
+                    }
+                    else
+                        return Request.CreateResponse(HttpStatusCode.NotFound,
+                            "The Employee with ID = " + id + " is NOT found");
 
                 }
+
             }
             catch (Exception ex)
             {
@@ -104,7 +110,16 @@ namespace EmployeeService.Controllers
         {
             try
             {
-                return cd.UpdateEmployee(id, employee);
+                if (cd.UpdateEmployee(id, employee) != null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, 
+                        cd.UpdateEmployee(id, employee));
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound, 
+                        "The Employee with ID = " + id + " is NOT found");
+                }
             }
             catch (Exception ex)
             {
