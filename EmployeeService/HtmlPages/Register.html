@@ -21,12 +21,14 @@
             $('#linkClose').click(function () {
                 $('#divError').hide('fade');
             });
+
             $('#txtEmail').click(function () {
                 $('#divError').hide('fade');
                 
             });
 
             $('#btnRegister').click(function () {
+
                 $.ajax({
                     url:'/api/account/register',
                     method: 'POST',
@@ -44,11 +46,9 @@
                     }
                 });
 
-                
-
             });//End btnRegister click 
             
-         });//end ready()
+        });//end ready()
 
     </script>
 
@@ -86,16 +86,17 @@
                 </td>
             </tr>
         </table>
-        <div class="modal fade" tabindex="-1" id="successModal"
-             data-keyboard="false" data-backdrop="static">
+        <div class="modal fade" tabindex="-1" id="successModal" data-keyboard="false" data-backdrop="static">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4>Success</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3>
+                            Success
+                            <button type="button" class="close" style="color:#f63a3a;" data-dismiss="modal">&times;</button>
+                        </h3>
                     </div>
                     <div class="modal-body" >
-                        <h2 style="color:black">Registration Successful</h2>
+                        <h2 style="color:#333">Registration Successful</h2>
                     </div>
                     <div class="modal-footer">
                          <!--data-dismiss="modal"--> 

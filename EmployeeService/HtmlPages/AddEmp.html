@@ -95,11 +95,8 @@
             if (localStorage.getItem('accessToken') == null) {
                 window.location.href = "Login.html";
             }
-            $('#txtFirstName').val('');
-            $('#txtLastName').val('');
-            $('#txtSalary').val('');
-            $('#txtGender').val('');
-
+            $("#txtFirstName, #txtLastName, #txtSalary, #txtGender").val('');
+            
             $('#linkClose').click(function () {
                 $('#divError').hide('fade');
             });

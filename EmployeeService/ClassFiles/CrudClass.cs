@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace EmployeeService.Controllers
 {
-    public abstract class CrudClass: ICrudClass
+    public  class CrudClass: ICrudClass
     {
         public Employee GetEmployeeWithId(int id)
         {
