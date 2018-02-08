@@ -206,6 +206,7 @@
     <Compile Include="Controllers\CrudClass.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ICrudClass.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="EmployeeSecurity.cs" />
     <Compile Include="ErrorClass.cs" />

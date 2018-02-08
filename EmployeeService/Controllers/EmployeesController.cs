@@ -13,13 +13,13 @@ namespace EmployeeService.Controllers
     [Authorize]
     public class EmployeesController : ApiController
     {
-        CrudClass cd = new CrudClass();
+        ICrudClass cd =  new ICrudClass();
 
         public HttpResponseMessage Get()
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK);
+                return Request.CreateResponse(HttpStatusCode.OK,cd.GetAllEmployees());
             }
             catch (Exception ex)
             {
