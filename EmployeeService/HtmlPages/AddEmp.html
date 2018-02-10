@@ -5,7 +5,9 @@
     <title></title>
     <script src="../Scripts/jquery-1.10.2.js"></script>
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="EmpScript.js"></script>
     <link href="../Content/Style.css" rel="stylesheet" />
+
 </head>
 <body>
     <section class="page-header   navbar navbar-fixed-top Eheader">
@@ -56,8 +58,7 @@
                 </tr>
             </table>
       </form>        
-      <!--  <div class="modal fade" tabindex="-1" id="successModal"
-             data-keyboard="false" data-backdrop="static">
+       <div class="modal fade" tabindex="-1" id="successModal" data-keyboard="false" data-backdrop="static">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -65,16 +66,16 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <h2 style="color:black">Registration Successful</h2>
+                        <h2 style="color:black">Added Employee Successfully</h2>
                     </div>
                     <div class="modal-footer">
-                        <!--data-dismiss="modal"
-                        <a class="btn btn-success btnCustom" href="Login.html">Close</a>
+                        data-dismiss="modal"
+                        <a class="btn btn-success btnCustom" href="Data.html">Go to Employee List</a>
                     </div>
                 </div>
             </div>
         </div>
-        -->
+        
         
         <div id="divError" class="alert alert-danger collapse">
             <a id="linkClose" class="close" href="#">&times;</a>
@@ -88,57 +89,71 @@
     </section>
 
 
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-
-            if (localStorage.getItem('accessToken') == null) {
-                window.location.href = "Login.html";
-            }
-            $("#txtFirstName, #txtLastName, #txtSalary, #txtGender").val('');
-            
-            $('#linkClose').click(function () {
-                $('#divError').hide('fade');
-            });
-            $('#txtUsername').click(function () {
-                $('#divError').hide('fade');
-
-            });
-
-            var empObj= {firstName: $('#txtFirstName').val(),lastName: $('#txtLastName').val(),salary: $('#txtSalary').val(),gender: $('#txtGender').val(),};
-           // $('#btnSubmit').click(function () {
-
-                $('#formAddEmp').submit(function (event) {
-                    event.preventDefault(); // Prevent the form from submitting via the browser
-                    var form = $(this);
-                $.ajax({
-                    url: '/api/employees',
-                    method: 'POST',
-                    contentType: 'application/json',
-                    headers: {
-                        'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
-                    },
-
-                    data: $('#formAddEmp').serialize(),
-                    success: function (response) {
-                        //  $('#divErrorText').text(JSON.stringify(response));
-                        window.location.href = 'Data.html';
-
-                    },
-                    error: function (jqXHR) {
-                        $('#divErrorText').text(jqXHR.statusText + "   " + jqXHR.responseText);
-                        $('#divError').show('fade');
-                    }
-                });
-            });//End btnRegister click
-
-            $('#btnLogOff').click(function () {
-                localStorage.removeItem('accessToken');
-                window.location.href = 'Login.html';
-            });
-        });//end ready()
-
-    </script>
+   
 </body>
 </html>
 
+
+
+
+
+
+<!--var arr = [
+    {
+        f_name: 'George',
+        l_name: 'Washington',
+        age: 279
+    },
+    {
+        f_name: 'Abraham',
+        l_name: 'Lincoln',
+        age: 202
+    },
+    {
+        f_name: 'Barack',
+        l_name: 'Obama',
+        age: 50
+    }
+];
+
+$(function() {
+    $('#headings th').click(function() {
+        var id = $(this).attr('id');
+        var asc = (!$(this).attr('asc')); // switch the order, true if not set
+
+        // set asc="asc" when sorted in ascending order
+        $('#headings th').each(function() {
+            $(this).removeAttr('asc');
+        });
+        if (asc) $(this).attr('asc', 'asc');
+
+        sortResults(id, asc);
+    });
+
+    showResults();
+});
+
+function sortResults(prop, asc) {
+    arr = arr.sort(function(a, b) {
+        if (asc) return (a[prop] > b[prop]);
+        else return (b[prop] > a[prop]);
+    });
+    showResults();
+}
+
+function showResults () {
+    var html = '';
+    for (var e in arr) {
+        html += '<tr>
+    '
+    +'
+    <td>'+arr[e].f_name+'</td>'
+    +'
+    <td>'+arr[e].l_name+'</td>'
+    +'
+    <td>'+arr[e].age+'</td>'
+    +'
+</tr>';
+    }
+    $('#results').html(html);
+}-->

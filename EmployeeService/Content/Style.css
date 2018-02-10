@@ -51,15 +51,15 @@ btn:hover {
 .btnCustom {
     background-color: #12746f;
     border-color: #12746f;
+    color:white;
     margin-right: 10px;
-    transition-duration: 0.3s;
+    transition-duration: 0.5s;
 }
-    .btnCustom:hover {
+.btnCustom:hover {
         background-color: #0a3e3c;
         border-color: #0a3e3c;
         color:white;
-       
-        transition-duration: 0.3s;
+        transition-duration: 0.5s;
     }
 
 

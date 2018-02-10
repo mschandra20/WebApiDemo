@@ -14,43 +14,6 @@
 <body>
     
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#txtEmail').val('');
-
-            $('#linkClose').click(function () {
-                $('#divError').hide('fade');
-            });
-
-            $('#txtEmail').click(function () {
-                $('#divError').hide('fade');
-                
-            });
-
-            $('#btnRegister').click(function () {
-
-                $.ajax({
-                    url:'/api/account/register',
-                    method: 'POST',
-                    data: {
-                        email: $('#txtEmail').val(),
-                        Password: $('#txtPassword').val(),
-                        ConfirmPassword: $('#txtConfirmPassword').val(),
-                    },
-                    success: function () {
-                        $('#successModal').modal('show');
-                    },
-                    error: function (jqXHR) {
-                        $('#divErrorText').text(jqXHR.statusText +"   "+ jqXHR.responseText);
-                        $('#divError').show('fade');
-                    }
-                });
-
-            });//End btnRegister click 
-            
-        });//end ready()
-
-    </script>
 
     <section class="page-header   navbar navbar-fixed-top Eheader">
         <h2>Employee Management Portal <a class="btn pull-right" href="Login.html">Login</a></h2>
