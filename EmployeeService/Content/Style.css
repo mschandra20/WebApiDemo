@@ -71,3 +71,7 @@ btn:hover {
 .navbar-inverse .navbar-nav > li > a {
     color: white;
 }
+.list-group-item {
+    /*padding:0;*/
+
+}

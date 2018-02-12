@@ -1,7 +1,9 @@
 ﻿ 
 //<script type="text/javascript">
 //AddEmp script
-        $(document).ready(function () {
+
+
+$(document).ready(function () {
 
             if (localStorage.getItem('accessToken') === null) {
                 window.location.href = "Login.html";
@@ -99,7 +101,7 @@
                         'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
                     },
                     success: function (data) { //On succesful execution of ajax we call this anonymous function
-
+                        localStorage.setItem('jsonData', JSON.stringify(data));
                         $('#tblData').removeClass('hidden').show('fade');
                       $('#tblBody').empty();
 
@@ -135,14 +137,42 @@
             $('#btnLogOff').click(function () {
                 localStorage.removeItem('accessToken');
                 window.location.href = 'Login.html';
+
             });
            
-           
+           //Search script
+
+            $('#txtSearch').keyup(function () {
+                $('#result').html('');//to clear the list
+                var searchString = $('#txtSearch').val();
+                var jsonData = localStorage.getItem('jsonData');
+                var jsonObj = JSON.parse(jsonData);
+                var expression = new RegExp(searchString, "i");
+
+                $.each(jsonObj, function (key, value) {
+                    if (value.FirstName.search(expression) != -1)
+                    {
+                        $('#result').append('<li class="list-group-item">'
+                            + value.FirstName+' | ' 
+                            + value.LastName+' | '
+                            + value.Gender + ' | '
+                            + '</li>');
+                    }
+                })
+            });
+
+            
+
+
 
             //var clicks = 1;
             //$('#btnCount').click(function () { clicks++; $('#count').html(clicks); });
 
       //  });//End of doc ready
+
+
+
+
 
     //Login script
     //     $(document).ready(function () {
@@ -204,7 +234,7 @@
                     data: {
                         email: $('#txtEmail').val(),
                         Password: $('#txtPassword').val(),
-                        ConfirmPassword: $('#txtConfirmPassword').val(),
+                        ConfirmPassword: $('#txtConfirmPassword').val()
                     },
                     success: function () {
                         $('#successModal').modal('show');
